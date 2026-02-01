@@ -39,7 +39,8 @@ HIGH_PRIORITY_KEYWORDS = [
 
 MEDIUM_PRIORITY_KEYWORDS = [
     'crispr', 'genome editing', 'developmental biology', 'developmental',
-    'cell culture', 'bioinformatics', 'computational biology'
+    'cell culture', 'bioinformatics', 'computational biology',
+    'molecular biology', 'immunology', 'genetics', 'immunotherapies', 'genetic engineering'
 ]
 
 ALL_KEYWORDS = HIGH_PRIORITY_KEYWORDS + MEDIUM_PRIORITY_KEYWORDS

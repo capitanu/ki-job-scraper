@@ -91,13 +91,15 @@ def scrape() -> List[Dict]:
                 seen_ids.add(job['id'])
                 unique_jobs.append(job)
 
-        # Fetch deadlines from detail pages
-        logger.info(f"Found {len(unique_jobs)} doctoral positions, fetching deadlines...")
+        # Fetch details (deadline + description) from detail pages
+        logger.info(f"Found {len(unique_jobs)} doctoral positions, fetching details...")
         for job in unique_jobs:
-            deadline, deadline_date = fetch_job_deadline(job['url'])
-            if deadline:
-                job['deadline'] = deadline
-                job['deadline_date'] = deadline_date
+            details = fetch_job_details(job['url'])
+            if details['deadline']:
+                job['deadline'] = details['deadline']
+                job['deadline_date'] = details['deadline_date']
+            if details['description']:
+                job['description'] = details['description']
 
         return unique_jobs
 
@@ -118,8 +120,9 @@ def extract_job_id(href: str) -> Optional[str]:
     return None
 
 
-def fetch_job_deadline(url: str) -> tuple:
-    """Fetch job detail page to get the deadline"""
+def fetch_job_details(url: str) -> Dict:
+    """Fetch job detail page to get deadline and description for keyword matching"""
+    result = {'deadline': None, 'deadline_date': None, 'description': ''}
     try:
         response = requests.get(url, timeout=15, headers={
             'User-Agent': 'Mozilla/5.0 (compatible; KI-Job-Scraper/1.0)'
@@ -127,6 +130,9 @@ def fetch_job_deadline(url: str) -> tuple:
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'lxml')
         text = soup.get_text()
+
+        # Get description (first 3000 chars of main content for keyword matching)
+        result['description'] = ' '.join(text.split())[:3000]
 
         # Search for date after "Last application date" (with possible whitespace/newlines)
         match = re.search(
@@ -136,18 +142,18 @@ def fetch_job_deadline(url: str) -> tuple:
         )
         if match:
             date_str = match.group(1)
+            result['deadline'] = date_str
             # Try parsing various formats
             for fmt in ['%d.%b.%Y', '%d-%b-%Y', '%Y-%m-%d', '%d/%m/%Y', '%d.%m.%Y']:
                 try:
-                    deadline_date = datetime.strptime(date_str, fmt)
-                    return date_str, deadline_date
+                    result['deadline_date'] = datetime.strptime(date_str, fmt)
+                    break
                 except ValueError:
                     continue
-            return date_str, None
-        return None, None
+        return result
     except Exception as e:
-        logger.debug(f"Could not fetch deadline from {url}: {e}")
-        return None, None
+        logger.debug(f"Could not fetch details from {url}: {e}")
+        return result
 
 
 def find_deadline(element) -> tuple:
