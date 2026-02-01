@@ -315,13 +315,9 @@
     </div>
 
     <footer>
-        <p>Last updated: 2026-02-01 20:15 CET</p>
+        <p>Last updated: 2026-02-01 20:25 CET</p>
         <p>Subscribe to notifications: <a href="https://ntfy.sh/andrada-ki-jobs">ntfy.sh/andrada-ki-jobs</a></p>
-        <p style="margin-top: 0.5rem;">
-            <button onclick="exportState()" style="padding: 0.3rem 0.8rem; margin-right: 0.5rem; cursor: pointer;">Export</button>
-            <button onclick="importState()" style="padding: 0.3rem 0.8rem; cursor: pointer;">Import</button>
-            <span style="font-size: 0.7rem; margin-left: 0.5rem;">(sync between devices)</span>
-        </p>
+        <p id="sync-status" style="font-size: 0.7rem; margin-top: 0.5rem; color: #718096;"></p>
     </footer>
 
     <script>
@@ -332,48 +328,78 @@
             'academic_positions': 'Academic Positions'
         };
 
+        // Supabase config
+        const SUPABASE_URL = 'https://lbhnbdocsmjpltxhmxek.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxiaG5iZG9jc21qcGx0eGhteGVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NjM5OTQsImV4cCI6MjA4NTUzOTk5NH0.b8lBAbC_7Ldtzof7vyA8y6SkN4kSlj5lMxroBpjVIdE';
+
         let applied = [];
         let irrelevant = [];
+        let saveTimeout = null;
 
-        // Load state from localStorage
-        function loadState() {
-            applied = JSON.parse(localStorage.getItem('ki-jobs-applied') || '[]');
-            irrelevant = JSON.parse(localStorage.getItem('ki-jobs-irrelevant') || '[]');
+        function setSyncStatus(msg) {
+            document.getElementById('sync-status').textContent = msg;
+        }
+
+        // Load state from Supabase
+        async function loadState() {
+            setSyncStatus('Loading...');
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/job_state?id=eq.default&select=applied,irrelevant`, {
+                    headers: {
+                        'apikey': SUPABASE_KEY,
+                        'Authorization': `Bearer ${SUPABASE_KEY}`
+                    }
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.length > 0) {
+                        applied = data[0].applied || [];
+                        irrelevant = data[0].irrelevant || [];
+                    }
+                    setSyncStatus('Synced');
+                } else {
+                    throw new Error('Failed to load');
+                }
+            } catch (e) {
+                console.error('Load error:', e);
+                setSyncStatus('Offline - using local data');
+                applied = JSON.parse(localStorage.getItem('ki-jobs-applied') || '[]');
+                irrelevant = JSON.parse(localStorage.getItem('ki-jobs-irrelevant') || '[]');
+            }
             render();
         }
 
-        // Save state to localStorage
+        // Save state to Supabase (debounced)
         function saveState() {
+            // Always save to localStorage as backup
             localStorage.setItem('ki-jobs-applied', JSON.stringify(applied));
             localStorage.setItem('ki-jobs-irrelevant', JSON.stringify(irrelevant));
-        }
 
-        // Export state as JSON string (for manual sync)
-        function exportState() {
-            const data = JSON.stringify({ applied, irrelevant }, null, 2);
-            navigator.clipboard.writeText(data).then(() => {
-                alert('State copied to clipboard! Paste it on another device using Import.');
-            }).catch(() => {
-                prompt('Copy this data:', data);
-            });
-        }
-
-        // Import state from JSON string (for manual sync)
-        function importState() {
-            const data = prompt('Paste the exported state here:');
-            if (data) {
+            // Debounce cloud save
+            if (saveTimeout) clearTimeout(saveTimeout);
+            setSyncStatus('Saving...');
+            saveTimeout = setTimeout(async () => {
                 try {
-                    const parsed = JSON.parse(data);
-                    // Merge with existing
-                    applied = [...new Set([...applied, ...(parsed.applied || [])])];
-                    irrelevant = [...new Set([...irrelevant, ...(parsed.irrelevant || [])])];
-                    saveState();
-                    render();
-                    alert('State imported successfully!');
+                    const res = await fetch(`${SUPABASE_URL}/rest/v1/job_state?id=eq.default`, {
+                        method: 'PATCH',
+                        headers: {
+                            'apikey': SUPABASE_KEY,
+                            'Authorization': `Bearer ${SUPABASE_KEY}`,
+                            'Content-Type': 'application/json',
+                            'Prefer': 'return=minimal'
+                        },
+                        body: JSON.stringify({ applied, irrelevant })
+                    });
+                    if (res.ok) {
+                        setSyncStatus('Synced');
+                    } else {
+                        throw new Error('Save failed');
+                    }
                 } catch (e) {
-                    alert('Invalid data format');
+                    console.error('Save error:', e);
+                    setSyncStatus('Sync error - saved locally');
                 }
-            }
+            }, 500);
         }
 
         function formatDate(dateStr) {
