@@ -1,7 +1,7 @@
 {
   "jobs": {
     "ki_doktorand_891486": {
-      "first_seen": "2026-02-01T19:18:48.764491",
+      "first_seen": "2026-02-01T19:33:10.864567",
       "title": "Doctoral position in Systems Neuroscience",
       "url": "https://kidoktorand.varbi.com/en/what:job/jobID:891486/",
       "source": "ki_doktorand",
@@ -11,7 +11,7 @@
       ]
     },
     "ki_doktorand_879932": {
-      "first_seen": "2026-02-01T19:18:48.764585",
+      "first_seen": "2026-02-01T19:33:10.864665",
       "title": "PhD position \u2013 Computational Neuroscience and Systems Biology. Theme: Neural dynamics underlying survival behaviors",
       "url": "https://kidoktorand.varbi.com/en/what:job/jobID:879932/",
       "source": "ki_doktorand",
@@ -21,7 +21,7 @@
       ]
     },
     "ki_doktorand_877859": {
-      "first_seen": "2026-02-01T19:18:48.764617",
+      "first_seen": "2026-02-01T19:33:10.864697",
       "title": "PhD position \u2013 Bioengineering and Neuroscience Theme: Neural basis of survival behaviors",
       "url": "https://kidoktorand.varbi.com/en/what:job/jobID:877859/",
       "source": "ki_doktorand",
@@ -30,28 +30,8 @@
         "neuroscience"
       ]
     },
-    "ki_varbi_891819": {
-      "first_seen": "2026-02-01T19:18:48.764927",
-      "title": "Postdoctoral Researcher in Neuroscience",
-      "url": "https://ki.varbi.com/en/what:job/jobID:891819/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-11",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
-    "ki_varbi_897631": {
-      "first_seen": "2026-02-01T19:18:48.765000",
-      "title": "Postdoctoral Researcher in Spatial Transcriptomics of Human Adipose Tissue",
-      "url": "https://ki.varbi.com/en/what:job/jobID:897631/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-11",
-      "matched_keywords": [
-        "spatial transcriptomics"
-      ]
-    },
     "ki_varbi_898365": {
-      "first_seen": "2026-02-01T19:18:48.765124",
+      "first_seen": "2026-02-01T19:33:10.864930",
       "title": "Research Assistant in Spatial Transcriptomics of Human Adipose Tissue",
       "url": "https://ki.varbi.com/en/what:job/jobID:898365/",
       "source": "ki_varbi",
@@ -61,7 +41,7 @@
       ]
     },
     "ki_varbi_889495": {
-      "first_seen": "2026-02-01T19:18:48.765170",
+      "first_seen": "2026-02-01T19:33:10.864979",
       "title": "Research Specialist in Pluripotent Stem Cell derived Cell Therapies",
       "url": "https://ki.varbi.com/en/what:job/jobID:889495/",
       "source": "ki_varbi",
@@ -70,19 +50,8 @@
         "stem cell"
       ]
     },
-    "ki_varbi_894953": {
-      "first_seen": "2026-02-01T19:18:48.765779",
-      "title": "Postdoc position in single-cell cancer omics bioinformatics",
-      "url": "https://ki.varbi.com/en/what:job/jobID:894953/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-03",
-      "matched_keywords": [
-        "single-cell",
-        "bioinformatics"
-      ]
-    },
     "ki_varbi_895416": {
-      "first_seen": "2026-02-01T19:18:48.765878",
+      "first_seen": "2026-02-01T19:33:10.865419",
       "title": "Lab manager in organoid technology, endoderm biology and omics.",
       "url": "https://ki.varbi.com/en/what:job/jobID:895416/",
       "source": "ki_varbi",
@@ -92,7 +61,7 @@
       ]
     },
     "ki_varbi_893855": {
-      "first_seen": "2026-02-01T19:18:48.765920",
+      "first_seen": "2026-02-01T19:33:10.865470",
       "title": "Research Assistant in Neuroscience",
       "url": "https://ki.varbi.com/en/what:job/jobID:893855/",
       "source": "ki_varbi",
@@ -100,37 +69,7 @@
       "matched_keywords": [
         "neuroscience"
       ]
-    },
-    "ki_varbi_891065": {
-      "first_seen": "2026-02-01T19:18:48.766180",
-      "title": "Postdoctoral Researcher in Experimental Systems Neuroscience & Viral Engineering",
-      "url": "https://ki.varbi.com/en/what:job/jobID:891065/",
-      "source": "ki_varbi",
-      "deadline": "2026-03-29",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
-    "ki_varbi_891414": {
-      "first_seen": "2026-02-01T19:18:48.766205",
-      "title": "Postdoctoral studies in Experimental Systems Neuroscience  (scholarship)",
-      "url": "https://ki.varbi.com/en/what:job/jobID:891414/",
-      "source": "ki_varbi",
-      "deadline": "2026-05-15",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
-    "ki_varbi_868318": {
-      "first_seen": "2026-02-01T19:18:48.766355",
-      "title": "Postdoctoral researcher in Bioinformatics focusing on RNA biology and metabolic disease",
-      "url": "https://ki.varbi.com/en/what:job/jobID:868318/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-28",
-      "matched_keywords": [
-        "bioinformatics"
-      ]
     }
   },
-  "last_updated": "2026-02-01T19:19:29.926459"
+  "last_updated": "2026-02-01T19:33:13.616391"
 }

@@ -38,11 +38,14 @@ HIGH_PRIORITY_KEYWORDS = [
 ]
 
 MEDIUM_PRIORITY_KEYWORDS = [
-    'crispr', 'genome editing', 'developmental biology',
+    'crispr', 'genome editing', 'developmental biology', 'developmental',
     'cell culture', 'bioinformatics', 'computational biology'
 ]
 
 ALL_KEYWORDS = HIGH_PRIORITY_KEYWORDS + MEDIUM_PRIORITY_KEYWORDS
+
+# Exclude positions requiring a PhD (postdoc, etc.)
+EXCLUDED_TITLE_PATTERNS = ['postdoc', 'post-doc', 'postdoctoral']
 
 
 def load_seen_jobs() -> Dict:
@@ -135,6 +138,12 @@ def process_jobs(all_jobs: List[Dict], seen_data: Dict) -> Tuple[List[Dict], Lis
 
     for job in all_jobs:
         job_id = job['id']
+
+        # Skip postdoc positions (requires PhD)
+        title_lower = job['title'].lower()
+        if any(pattern in title_lower for pattern in EXCLUDED_TITLE_PATTERNS):
+            continue
+
         matched_keywords = match_keywords(job)
 
         if not matched_keywords:
