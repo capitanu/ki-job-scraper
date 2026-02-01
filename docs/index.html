@@ -315,8 +315,13 @@
     </div>
 
     <footer>
-        <p>Last updated: 2026-02-01 20:13 CET</p>
+        <p>Last updated: 2026-02-01 20:15 CET</p>
         <p>Subscribe to notifications: <a href="https://ntfy.sh/andrada-ki-jobs">ntfy.sh/andrada-ki-jobs</a></p>
+        <p style="margin-top: 0.5rem;">
+            <button onclick="exportState()" style="padding: 0.3rem 0.8rem; margin-right: 0.5rem; cursor: pointer;">Export</button>
+            <button onclick="importState()" style="padding: 0.3rem 0.8rem; cursor: pointer;">Import</button>
+            <span style="font-size: 0.7rem; margin-left: 0.5rem;">(sync between devices)</span>
+        </p>
     </footer>
 
     <script>
@@ -327,61 +332,48 @@
             'academic_positions': 'Academic Positions'
         };
 
-        const BLOB_ID = '019c1a9c-c9c0-762a-b95c-f4a137f1956f';
-        const BLOB_URL = `https://jsonblob.com/api/jsonBlob/${BLOB_ID}`;
-
         let applied = [];
         let irrelevant = [];
-        let saveTimeout = null;
 
-        // Load state from jsonblob, merge with localStorage
-        async function loadState() {
-            const localApplied = JSON.parse(localStorage.getItem('ki-jobs-applied') || '[]');
-            const localIrrelevant = JSON.parse(localStorage.getItem('ki-jobs-irrelevant') || '[]');
-
-            try {
-                const res = await fetch(BLOB_URL);
-                if (res.ok) {
-                    const data = await res.json();
-                    const cloudApplied = data.applied || [];
-                    const cloudIrrelevant = data.irrelevant || [];
-
-                    // Merge: combine both sources, remove duplicates
-                    applied = [...new Set([...cloudApplied, ...localApplied])];
-                    irrelevant = [...new Set([...cloudIrrelevant, ...localIrrelevant])];
-
-                    // If we merged in new data from localStorage, sync back to cloud
-                    if (applied.length > cloudApplied.length || irrelevant.length > cloudIrrelevant.length) {
-                        saveState();
-                    }
-                }
-            } catch (e) {
-                console.error('Failed to load state:', e);
-                applied = localApplied;
-                irrelevant = localIrrelevant;
-            }
+        // Load state from localStorage
+        function loadState() {
+            applied = JSON.parse(localStorage.getItem('ki-jobs-applied') || '[]');
+            irrelevant = JSON.parse(localStorage.getItem('ki-jobs-irrelevant') || '[]');
             render();
         }
 
-        // Save state to jsonblob (debounced)
+        // Save state to localStorage
         function saveState() {
-            // Also save to localStorage as backup
             localStorage.setItem('ki-jobs-applied', JSON.stringify(applied));
             localStorage.setItem('ki-jobs-irrelevant', JSON.stringify(irrelevant));
+        }
 
-            // Debounce cloud save
-            if (saveTimeout) clearTimeout(saveTimeout);
-            saveTimeout = setTimeout(async () => {
+        // Export state as JSON string (for manual sync)
+        function exportState() {
+            const data = JSON.stringify({ applied, irrelevant }, null, 2);
+            navigator.clipboard.writeText(data).then(() => {
+                alert('State copied to clipboard! Paste it on another device using Import.');
+            }).catch(() => {
+                prompt('Copy this data:', data);
+            });
+        }
+
+        // Import state from JSON string (for manual sync)
+        function importState() {
+            const data = prompt('Paste the exported state here:');
+            if (data) {
                 try {
-                    await fetch(BLOB_URL, {
-                        method: 'PUT',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ applied, irrelevant })
-                    });
+                    const parsed = JSON.parse(data);
+                    // Merge with existing
+                    applied = [...new Set([...applied, ...(parsed.applied || [])])];
+                    irrelevant = [...new Set([...irrelevant, ...(parsed.irrelevant || [])])];
+                    saveState();
+                    render();
+                    alert('State imported successfully!');
                 } catch (e) {
-                    console.error('Failed to save state:', e);
+                    alert('Invalid data format');
                 }
-            }, 500);
+            }
         }
 
         function formatDate(dateStr) {
