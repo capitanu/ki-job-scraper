@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KI Job Tracker - Research Positions</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #2c5282;
+            --success: #276749;
+            --warning: #c05621;
+            --light: #f7fafc;
+            --border: #e2e8f0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--light);
+            color: #2d3748;
+            line-height: 1.6;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        .stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: rgba(255,255,255,0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        .stat strong {
+            font-size: 1.2rem;
+        }
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+        .job-list {
+            list-style: none;
+        }
+        .job {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .job:last-child {
+            border-bottom: none;
+        }
+        .job-title {
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .job-title:hover {
+            text-decoration: underline;
+        }
+        .job-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .badge-high {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        .badge-closing {
+            background: #feebc8;
+            color: var(--warning);
+        }
+        .badge-keyword {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+        .keywords {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+        }
+        .empty {
+            color: #a0aec0;
+            text-align: center;
+            padding: 2rem;
+        }
+        footer {
+            text-align: center;
+            color: #a0aec0;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+        }
+        footer a {
+            color: var(--accent);
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 0.5rem;
+            }
+            header {
+                padding: 1rem;
+            }
+            .job-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>KI Research Position Tracker</h1>
+            <p class="subtitle">PhD &amp; Research positions at Karolinska Institutet</p>
+            <p class="subtitle">Focus: iPSC/Organoids, Single-cell, Neuroscience</p>
+            <div class="stats">
+                <div class="stat"><strong>13</strong> matching positions</div>
+                <div class="stat"><strong>1</strong> closing soon</div>
+                <div class="stat"><strong>12</strong> high priority</div>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>KI Staff Positions (10)</h2>
+            <ul class="job-list">
+
+                <li class="job">
+                    <a href="https://ki.varbi.com/en/what:job/jobID:894953/" class="job-title" target="_blank">Postdoc position in single-cell cancer omics bioinformatics</a>
+                    <div class="job-meta">
+                        <span>Deadline: 2026-02-03</span>
+                        <span class="badge badge-high">High Priority</span> <span class="badge badge-closing">Closing Soon</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">single-cell</span><span class="badge badge-keyword">bioinformatics</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://ki.varbi.com/en/what:job/jobID:895416/" class="job-title" target="_blank">Lab manager in organoid technology, endoderm biology and omics.</a>
+                    <div class="job-meta">
+                        <span>Deadline: 2026-02-14</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">organoid</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://ki.varbi.com/en/what:job/jobID:891065/" class="job-title" target="_blank">Postdoctoral Researcher in Experimental Systems Neuroscience & Viral Engineering</a>
+                    <div class="job-meta">
+                        <span>Deadline: 2026-03-29</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://ki.varbi.com/en/what:job/jobID:891819/" class="job-title" target="_blank">Postdoctoral Researcher in Neuroscience</a>
+                    <div class="job-meta">
+                        <span>Deadline: 2026-02-11</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://ki.varbi.com/en/what:job/jobID:897631/" class="job-title" target="_blank">Postdoctoral Researcher in Spatial Transcriptomics of Human Adipose Tissue</a>
+                    <div class="job-meta">
+                        <span>Deadline: 2026-02-11</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">spatial transcriptomics</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://ki.varbi.com/en/what:job/jobID:891414/" class="job-title" target="_blank">Postdoctoral studies in Experimental Systems Neuroscience  (scholarship)</a>
+                    <div class="job-meta">
+                        <span>Deadline: 2026-05-15</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://ki.varbi.com/en/what:job/jobID:893855/" class="job-title" target="_blank">Research Assistant in Neuroscience</a>
+                    <div class="job-meta">
+                        <span>Deadline: 2026-02-16</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://ki.varbi.com/en/what:job/jobID:898365/" class="job-title" target="_blank">Research Assistant in Spatial Transcriptomics of Human Adipose Tissue</a>
+                    <div class="job-meta">
+                        <span>Deadline: 2026-02-11</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">spatial transcriptomics</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://ki.varbi.com/en/what:job/jobID:889495/" class="job-title" target="_blank">Research Specialist in Pluripotent Stem Cell derived Cell Therapies</a>
+                    <div class="job-meta">
+                        <span>Deadline: 2026-02-10</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">stem cell</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://ki.varbi.com/en/what:job/jobID:868318/" class="job-title" target="_blank">Postdoctoral researcher in Bioinformatics focusing on RNA biology and metabolic disease</a>
+                    <div class="job-meta">
+                        <span>Deadline: 2026-02-28</span>
+                        
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">bioinformatics</span></div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>KI Doctoral Positions (3)</h2>
+            <ul class="job-list">
+
+                <li class="job">
+                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:891486/" class="job-title" target="_blank">Doctoral position in Systems Neuroscience</a>
+                    <div class="job-meta">
+                        <span>Deadline: None</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:877859/" class="job-title" target="_blank">PhD position – Bioengineering and Neuroscience Theme: Neural basis of survival behaviors</a>
+                    <div class="job-meta">
+                        <span>Deadline: None</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span></div>
+                </li>
+
+                <li class="job">
+                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:879932/" class="job-title" target="_blank">PhD position – Computational Neuroscience and Systems Biology. Theme: Neural dynamics underlying survival behaviors</a>
+                    <div class="job-meta">
+                        <span>Deadline: None</span>
+                        <span class="badge badge-high">High Priority</span>
+                    </div>
+                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span></div>
+                </li>
+
+            </ul>
+        </div>
+
+        <footer>
+            <p>Last updated: 2026-02-01 19:19 CET</p>
+            <p>Subscribe to notifications: <a href="https://ntfy.sh/andrada-ki-jobs">ntfy.sh/andrada-ki-jobs</a></p>
+        </footer>
+    </div>
+</body>
+</html>
