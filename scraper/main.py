@@ -415,7 +415,20 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
                 if job.get('closing_soon'):
                     badges.append('<span class="badge badge-closing">Closing Soon</span>')
 
-                deadline_text = f"Deadline: {job.get('deadline', 'Not specified')}"
+                # Format deadline consistently
+                deadline_date = job.get('deadline_date')
+                if deadline_date:
+                    if isinstance(deadline_date, str):
+                        try:
+                            deadline_date = datetime.fromisoformat(deadline_date)
+                        except ValueError:
+                            deadline_date = None
+                    if deadline_date:
+                        deadline_text = f"Deadline: {deadline_date.strftime('%d %b %Y')}"
+                    else:
+                        deadline_text = f"Deadline: {job.get('deadline', 'Not specified')}"
+                else:
+                    deadline_text = f"Deadline: {job.get('deadline', 'Not specified')}"
 
                 keywords_html = ''.join(
                     f'<span class="badge badge-keyword">{kw}</span>'
