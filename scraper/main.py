@@ -550,20 +550,31 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
         let irrelevant = [];
         let saveTimeout = null;
 
-        // Load state from jsonblob
+        // Load state from jsonblob, merge with localStorage
         async function loadState() {{
+            const localApplied = JSON.parse(localStorage.getItem('ki-jobs-applied') || '[]');
+            const localIrrelevant = JSON.parse(localStorage.getItem('ki-jobs-irrelevant') || '[]');
+
             try {{
                 const res = await fetch(BLOB_URL);
                 if (res.ok) {{
                     const data = await res.json();
-                    applied = data.applied || [];
-                    irrelevant = data.irrelevant || [];
+                    const cloudApplied = data.applied || [];
+                    const cloudIrrelevant = data.irrelevant || [];
+
+                    // Merge: combine both sources, remove duplicates
+                    applied = [...new Set([...cloudApplied, ...localApplied])];
+                    irrelevant = [...new Set([...cloudIrrelevant, ...localIrrelevant])];
+
+                    // If we merged in new data from localStorage, sync back to cloud
+                    if (applied.length > cloudApplied.length || irrelevant.length > cloudIrrelevant.length) {{
+                        saveState();
+                    }}
                 }}
             }} catch (e) {{
                 console.error('Failed to load state:', e);
-                // Fall back to localStorage
-                applied = JSON.parse(localStorage.getItem('ki-jobs-applied') || '[]');
-                irrelevant = JSON.parse(localStorage.getItem('ki-jobs-irrelevant') || '[]');
+                applied = localApplied;
+                irrelevant = localIrrelevant;
             }}
             render();
         }}
