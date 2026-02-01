@@ -352,10 +352,35 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
                 gap: 0.5rem;
             }}
         }}
+        .easter-egg {{
+            text-align: center;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            color: white;
+        }}
+        .easter-egg img {{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-bottom: 0.75rem;
+            object-fit: cover;
+        }}
+        .easter-egg p {{
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }}
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="easter-egg">
+            <img src="andrada.jpeg" alt="Andrada Balmez">
+            <p>Future PhD Student: Andrada Balmez</p>
+        </div>
         <header>
             <h1>KI Research Position Tracker</h1>
             <p class="subtitle">PhD &amp; Research positions at Karolinska Institutet</p>
