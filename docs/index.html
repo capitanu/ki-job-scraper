@@ -26,9 +26,24 @@
             line-height: 1.6;
             padding: 1rem;
         }
-        .container {
-            max-width: 900px;
+        .top-container {
+            max-width: 1400px;
             margin: 0 auto;
+        }
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .left-column {
+            min-width: 0;
+        }
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
         header {
             background: var(--primary);
@@ -74,6 +89,18 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--border);
         }
+        .section.applied {
+            border-left: 4px solid var(--success);
+        }
+        .section.applied h2 {
+            color: var(--success);
+        }
+        .section.irrelevant {
+            border-left: 4px solid #a0aec0;
+        }
+        .section.irrelevant h2 {
+            color: #718096;
+        }
         .job-list {
             list-style: none;
         }
@@ -84,15 +111,48 @@
         .job:last-child {
             border-bottom: none;
         }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
         .job-title {
             font-weight: 600;
             color: var(--accent);
             text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
+            flex: 1;
         }
         .job-title:hover {
             text-decoration: underline;
+        }
+        .job-actions {
+            display: flex;
+            gap: 0.25rem;
+            flex-shrink: 0;
+        }
+        .btn {
+            padding: 0.25rem 0.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+        .btn-applied {
+            background: #c6f6d5;
+            color: var(--success);
+        }
+        .btn-irrelevant {
+            background: #e2e8f0;
+            color: #718096;
+        }
+        .btn-undo {
+            background: #fed7d7;
+            color: #c53030;
         }
         .job-meta {
             display: flex;
@@ -100,6 +160,7 @@
             flex-wrap: wrap;
             font-size: 0.85rem;
             color: #718096;
+            margin-top: 0.5rem;
         }
         .badge {
             display: inline-block;
@@ -129,7 +190,8 @@
         .empty {
             color: #a0aec0;
             text-align: center;
-            padding: 2rem;
+            padding: 1rem;
+            font-size: 0.9rem;
         }
         footer {
             text-align: center;
@@ -139,18 +201,6 @@
         }
         footer a {
             color: var(--accent);
-        }
-        @media (max-width: 600px) {
-            body {
-                padding: 0.5rem;
-            }
-            header {
-                padding: 1rem;
-            }
-            .job-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
         }
         .easter-egg {
             text-align: center;
@@ -173,10 +223,61 @@
             font-size: 1.1rem;
             font-weight: 500;
         }
+        .right-job {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+        .right-job:last-child {
+            border-bottom: none;
+        }
+        .right-job-title {
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .right-job-title:hover {
+            text-decoration: underline;
+        }
+        .right-job-meta {
+            font-size: 0.75rem;
+            color: #718096;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .right-column {
+                order: -1;
+            }
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 0.5rem;
+            }
+            header {
+                padding: 1rem;
+            }
+            .job-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .job-header {
+                flex-direction: column;
+            }
+            .job-actions {
+                align-self: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="top-container">
         <div class="easter-egg">
             <img src="andrada.jpeg" alt="Andrada Balmez">
             <p>Future PhD Student: Andrada Balmez</p>
@@ -186,183 +287,232 @@
             <p class="subtitle">PhD &amp; Research positions at Karolinska Institutet</p>
             <p class="subtitle">Focus: iPSC/Organoids, Single-cell, Neuroscience</p>
             <div class="stats">
-                <div class="stat"><strong>17</strong> matching positions</div>
-                <div class="stat"><strong>4</strong> closing soon</div>
-                <div class="stat"><strong>8</strong> high priority</div>
+                <div class="stat"><strong id="stat-total">17</strong> matching positions</div>
+                <div class="stat"><strong id="stat-closing">4</strong> closing soon</div>
+                <div class="stat"><strong id="stat-high">8</strong> high priority</div>
             </div>
         </header>
-
-        <div class="section">
-            <h2>KI Doctoral Positions (11)</h2>
-            <ul class="job-list">
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:895780/" class="job-title" target="_blank">Doctoral (PhD) student position in infection biology</a>
-                    <div class="job-meta">
-                        <span>Deadline: 03 Feb 2026</span>
-                        <span class="badge badge-closing">Closing Soon</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">immunology</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:896279/" class="job-title" target="_blank">Doctoral (PhD) student position in Virology and Immunology</a>
-                    <div class="job-meta">
-                        <span>Deadline: 06 Feb 2026</span>
-                        <span class="badge badge-closing">Closing Soon</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">immunology</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:894301/" class="job-title" target="_blank">Examining long non-coding RNA function in human adipocytes</a>
-                    <div class="job-meta">
-                        <span>Deadline: 09 Feb 2026</span>
-                        <span class="badge badge-closing">Closing Soon</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">molecular biology</span><span class="badge badge-keyword">genetics</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:892468/" class="job-title" target="_blank">PhD position in Network Medicine</a>
-                    <div class="job-meta">
-                        <span>Deadline: 05 Feb 2026</span>
-                        <span class="badge badge-closing">Closing Soon</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">genetics</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:879039/" class="job-title" target="_blank">Doctoral (PhD) student position in online autism support</a>
-                    <div class="job-meta">
-                        <span>Deadline: 22 Feb 2026</span>
-                        <span class="badge badge-high">High Priority</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">neurodevelopmental</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:891486/" class="job-title" target="_blank">Doctoral position in Systems Neuroscience</a>
-                    <div class="job-meta">
-                        <span>Deadline: 10 Feb 2026</span>
-                        <span class="badge badge-high">High Priority</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span><span class="badge badge-keyword">single-cell</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:877859/" class="job-title" target="_blank">PhD position – Bioengineering and Neuroscience Theme: Neural basis of survival behaviors</a>
-                    <div class="job-meta">
-                        <span>Deadline: 05 Apr 2026</span>
-                        <span class="badge badge-high">High Priority</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:879932/" class="job-title" target="_blank">PhD position – Computational Neuroscience and Systems Biology. Theme: Neural dynamics underlying survival behaviors</a>
-                    <div class="job-meta">
-                        <span>Deadline: 05 Apr 2026</span>
-                        <span class="badge badge-high">High Priority</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:880275/" class="job-title" target="_blank">Doctoral (PhD) student position in Genetic Modification of NK cells</a>
-                    <div class="job-meta">
-                        <span>Deadline: 17 Feb 2026</span>
-                        
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">crispr</span><span class="badge badge-keyword">cell culture</span><span class="badge badge-keyword">molecular biology</span><span class="badge badge-keyword">immunology</span><span class="badge badge-keyword">immunotherapies</span><span class="badge badge-keyword">genetic engineering</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:892020/" class="job-title" target="_blank">Doctoral (PhD) student position in molecular epidemiology with focus on cardiovascular diseases</a>
-                    <div class="job-meta">
-                        <span>Deadline: 13 Feb 2026</span>
-                        
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">bioinformatics</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://kidoktorand.varbi.com/en/what:job/jobID:896801/" class="job-title" target="_blank">Doctoral position in”New Oligonucleotide Constructs for Enhanced Delivery”</a>
-                    <div class="job-meta">
-                        <span>Deadline: 28 Feb 2026</span>
-                        
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">genetic engineering</span></div>
-                </li>
-
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>KI Staff Positions (6)</h2>
-            <ul class="job-list">
-
-                <li class="job">
-                    <a href="https://ki.varbi.com/en/what:job/jobID:895416/" class="job-title" target="_blank">Lab manager in organoid technology, endoderm biology and omics.</a>
-                    <div class="job-meta">
-                        <span>Deadline: 14 Feb 2026</span>
-                        <span class="badge badge-high">High Priority</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">organoid</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://ki.varbi.com/en/what:job/jobID:893855/" class="job-title" target="_blank">Research Assistant in Neuroscience</a>
-                    <div class="job-meta">
-                        <span>Deadline: 16 Feb 2026</span>
-                        <span class="badge badge-high">High Priority</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">neuroscience</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://ki.varbi.com/en/what:job/jobID:898365/" class="job-title" target="_blank">Research Assistant in Spatial Transcriptomics of Human Adipose Tissue</a>
-                    <div class="job-meta">
-                        <span>Deadline: 11 Feb 2026</span>
-                        <span class="badge badge-high">High Priority</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">spatial transcriptomics</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://ki.varbi.com/en/what:job/jobID:889495/" class="job-title" target="_blank">Research Specialist in Pluripotent Stem Cell derived Cell Therapies</a>
-                    <div class="job-meta">
-                        <span>Deadline: 10 Feb 2026</span>
-                        <span class="badge badge-high">High Priority</span>
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">stem cell</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://ki.varbi.com/en/what:job/jobID:896298/" class="job-title" target="_blank">Research Assistant in Immunology</a>
-                    <div class="job-meta">
-                        <span>Deadline: 10 Feb 2026</span>
-                        
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">immunology</span></div>
-                </li>
-
-                <li class="job">
-                    <a href="https://ki.varbi.com/en/what:job/jobID:899166/" class="job-title" target="_blank">Research assistant in reproductive immunology</a>
-                    <div class="job-meta">
-                        <span>Deadline: 13 Feb 2026</span>
-                        
-                    </div>
-                    <div class="keywords"><span class="badge badge-keyword">immunology</span></div>
-                </li>
-
-            </ul>
-        </div>
-
-        <footer>
-            <p>Last updated: 2026-02-01 20:03 CET</p>
-            <p>Subscribe to notifications: <a href="https://ntfy.sh/andrada-ki-jobs">ntfy.sh/andrada-ki-jobs</a></p>
-        </footer>
     </div>
+
+    <div class="main-layout">
+        <div class="left-column" id="main-jobs">
+            <div class="section"><p class="empty">Loading...</p></div>
+        </div>
+        <div class="right-column">
+            <div class="section applied">
+                <h2>Applied (<span id="applied-count">0</span>)</h2>
+                <ul class="job-list" id="applied-list">
+                    <li class="empty" id="applied-empty">No applications yet</li>
+                </ul>
+            </div>
+            <div class="section irrelevant">
+                <h2>Irrelevant (<span id="irrelevant-count">0</span>)</h2>
+                <ul class="job-list" id="irrelevant-list">
+                    <li class="empty" id="irrelevant-empty">None marked</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Last updated: 2026-02-01 20:11 CET</p>
+        <p>Subscribe to notifications: <a href="https://ntfy.sh/andrada-ki-jobs">ntfy.sh/andrada-ki-jobs</a></p>
+    </footer>
+
+    <script>
+        const allJobs = [{"id": "ki_doktorand_896801", "title": "Doctoral position in\u201dNew Oligonucleotide Constructs for Enhanced Delivery\u201d", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:896801/", "deadline": "28.Feb.2026", "deadline_date": "2026-02-28T00:00:00", "source": "ki_doktorand", "matched_keywords": ["genetic engineering"], "is_high_priority": false, "closing_soon": false}, {"id": "ki_doktorand_880275", "title": "Doctoral (PhD) student position in Genetic Modification of NK cells", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:880275/", "deadline": "17.Feb.2026", "deadline_date": "2026-02-17T00:00:00", "source": "ki_doktorand", "matched_keywords": ["crispr", "cell culture", "molecular biology", "immunology", "immunotherapies", "genetic engineering"], "is_high_priority": false, "closing_soon": false}, {"id": "ki_doktorand_879039", "title": "Doctoral (PhD) student position in online autism support", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:879039/", "deadline": "22.Feb.2026", "deadline_date": "2026-02-22T00:00:00", "source": "ki_doktorand", "matched_keywords": ["neurodevelopmental"], "is_high_priority": true, "closing_soon": false}, {"id": "ki_doktorand_896279", "title": "Doctoral (PhD) student position in Virology and Immunology", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:896279/", "deadline": "06.Feb.2026", "deadline_date": "2026-02-06T00:00:00", "source": "ki_doktorand", "matched_keywords": ["immunology"], "is_high_priority": false, "closing_soon": true}, {"id": "ki_doktorand_895780", "title": "Doctoral (PhD) student position in infection biology", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:895780/", "deadline": "03.Feb.2026", "deadline_date": "2026-02-03T00:00:00", "source": "ki_doktorand", "matched_keywords": ["immunology"], "is_high_priority": false, "closing_soon": true}, {"id": "ki_doktorand_894301", "title": "Examining long non-coding RNA function in human adipocytes", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:894301/", "deadline": "09.Feb.2026", "deadline_date": "2026-02-09T00:00:00", "source": "ki_doktorand", "matched_keywords": ["molecular biology", "genetics"], "is_high_priority": false, "closing_soon": true}, {"id": "ki_doktorand_892468", "title": "PhD position in Network Medicine", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:892468/", "deadline": "05.Feb.2026", "deadline_date": "2026-02-05T00:00:00", "source": "ki_doktorand", "matched_keywords": ["genetics"], "is_high_priority": false, "closing_soon": true}, {"id": "ki_doktorand_891486", "title": "Doctoral position in Systems Neuroscience", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:891486/", "deadline": "10.Feb.2026", "deadline_date": "2026-02-10T00:00:00", "source": "ki_doktorand", "matched_keywords": ["neuroscience", "single-cell"], "is_high_priority": true, "closing_soon": false}, {"id": "ki_doktorand_892020", "title": "Doctoral (PhD) student position in molecular epidemiology with focus on cardiovascular diseases", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:892020/", "deadline": "13.Feb.2026", "deadline_date": "2026-02-13T00:00:00", "source": "ki_doktorand", "matched_keywords": ["bioinformatics"], "is_high_priority": false, "closing_soon": false}, {"id": "ki_doktorand_879932", "title": "PhD position \u2013 Computational Neuroscience and Systems Biology. Theme: Neural dynamics underlying survival behaviors", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:879932/", "deadline": "05.Apr.2026", "deadline_date": "2026-04-05T00:00:00", "source": "ki_doktorand", "matched_keywords": ["neuroscience"], "is_high_priority": true, "closing_soon": false}, {"id": "ki_doktorand_877859", "title": "PhD position \u2013 Bioengineering and Neuroscience Theme: Neural basis of survival behaviors", "url": "https://kidoktorand.varbi.com/en/what:job/jobID:877859/", "deadline": "05.Apr.2026", "deadline_date": "2026-04-05T00:00:00", "source": "ki_doktorand", "matched_keywords": ["neuroscience"], "is_high_priority": true, "closing_soon": false}, {"id": "ki_varbi_899166", "title": "Research assistant in reproductive immunology", "url": "https://ki.varbi.com/en/what:job/jobID:899166/", "deadline": "2026-02-13", "deadline_date": "2026-02-13T00:00:00", "source": "ki_varbi", "matched_keywords": ["immunology"], "is_high_priority": false, "closing_soon": false}, {"id": "ki_varbi_898365", "title": "Research Assistant in Spatial Transcriptomics of Human Adipose Tissue", "url": "https://ki.varbi.com/en/what:job/jobID:898365/", "deadline": "2026-02-11", "deadline_date": "2026-02-11T00:00:00", "source": "ki_varbi", "matched_keywords": ["spatial transcriptomics"], "is_high_priority": true, "closing_soon": false}, {"id": "ki_varbi_889495", "title": "Research Specialist in Pluripotent Stem Cell derived Cell Therapies", "url": "https://ki.varbi.com/en/what:job/jobID:889495/", "deadline": "2026-02-10", "deadline_date": "2026-02-10T00:00:00", "source": "ki_varbi", "matched_keywords": ["stem cell"], "is_high_priority": true, "closing_soon": false}, {"id": "ki_varbi_896298", "title": "Research Assistant in Immunology", "url": "https://ki.varbi.com/en/what:job/jobID:896298/", "deadline": "2026-02-10", "deadline_date": "2026-02-10T00:00:00", "source": "ki_varbi", "matched_keywords": ["immunology"], "is_high_priority": false, "closing_soon": false}, {"id": "ki_varbi_895416", "title": "Lab manager in organoid technology, endoderm biology and omics.", "url": "https://ki.varbi.com/en/what:job/jobID:895416/", "deadline": "2026-02-14", "deadline_date": "2026-02-14T00:00:00", "source": "ki_varbi", "matched_keywords": ["organoid"], "is_high_priority": true, "closing_soon": false}, {"id": "ki_varbi_893855", "title": "Research Assistant in Neuroscience", "url": "https://ki.varbi.com/en/what:job/jobID:893855/", "deadline": "2026-02-16", "deadline_date": "2026-02-16T00:00:00", "source": "ki_varbi", "matched_keywords": ["neuroscience"], "is_high_priority": true, "closing_soon": false}];
+        const sourceNames = {
+            'ki_doktorand': 'KI Doctoral Positions',
+            'ki_varbi': 'KI Staff Positions',
+            'academic_positions': 'Academic Positions'
+        };
+
+        const BLOB_ID = '019c1a9c-c9c0-762a-b95c-f4a137f1956f';
+        const BLOB_URL = `https://jsonblob.com/api/jsonBlob/${BLOB_ID}`;
+
+        let applied = [];
+        let irrelevant = [];
+        let saveTimeout = null;
+
+        // Load state from jsonblob
+        async function loadState() {
+            try {
+                const res = await fetch(BLOB_URL);
+                if (res.ok) {
+                    const data = await res.json();
+                    applied = data.applied || [];
+                    irrelevant = data.irrelevant || [];
+                }
+            } catch (e) {
+                console.error('Failed to load state:', e);
+                // Fall back to localStorage
+                applied = JSON.parse(localStorage.getItem('ki-jobs-applied') || '[]');
+                irrelevant = JSON.parse(localStorage.getItem('ki-jobs-irrelevant') || '[]');
+            }
+            render();
+        }
+
+        // Save state to jsonblob (debounced)
+        function saveState() {
+            // Also save to localStorage as backup
+            localStorage.setItem('ki-jobs-applied', JSON.stringify(applied));
+            localStorage.setItem('ki-jobs-irrelevant', JSON.stringify(irrelevant));
+
+            // Debounce cloud save
+            if (saveTimeout) clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(async () => {
+                try {
+                    await fetch(BLOB_URL, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ applied, irrelevant })
+                    });
+                } catch (e) {
+                    console.error('Failed to save state:', e);
+                }
+            }, 500);
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return 'Not specified';
+            try {
+                const date = new Date(dateStr);
+                return date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+            } catch {
+                return dateStr;
+            }
+        }
+
+        function createJobCard(job, showUndo = false, undoAction = null) {
+            const badges = [];
+            if (job.is_high_priority) badges.push('<span class="badge badge-high">High Priority</span>');
+            if (job.closing_soon) badges.push('<span class="badge badge-closing">Closing Soon</span>');
+
+            const keywords = job.matched_keywords.map(k => `<span class="badge badge-keyword">${k}</span>`).join('');
+            const deadline = formatDate(job.deadline_date || job.deadline);
+
+            let actions = '';
+            if (showUndo) {
+                actions = `<button class="btn btn-undo" onclick="undoJob('${job.id}', '${undoAction}')">Undo</button>`;
+            } else {
+                actions = `
+                    <button class="btn btn-applied" onclick="markApplied('${job.id}')">Applied</button>
+                    <button class="btn btn-irrelevant" onclick="markIrrelevant('${job.id}')">Irrelevant</button>
+                `;
+            }
+
+            return `
+                <li class="job" data-job-id="${job.id}">
+                    <div class="job-header">
+                        <a href="${job.url}" class="job-title" target="_blank">${job.title}</a>
+                        <div class="job-actions">${actions}</div>
+                    </div>
+                    <div class="job-meta">
+                        <span>Deadline: ${deadline}</span>
+                        ${badges.join(' ')}
+                    </div>
+                    <div class="keywords">${keywords}</div>
+                </li>
+            `;
+        }
+
+        function createRightJobCard(job, listType) {
+            const deadline = formatDate(job.deadline_date || job.deadline);
+            return `
+                <li class="right-job" data-job-id="${job.id}">
+                    <a href="${job.url}" class="right-job-title" target="_blank">${job.title}</a>
+                    <div class="right-job-meta">
+                        <span>${deadline}</span>
+                        <button class="btn btn-undo" onclick="undoJob('${job.id}', '${listType}')">Undo</button>
+                    </div>
+                </li>
+            `;
+        }
+
+        function markApplied(jobId) {
+            if (!applied.includes(jobId)) {
+                applied.push(jobId);
+                irrelevant = irrelevant.filter(id => id !== jobId);
+                saveState();
+                render();
+            }
+        }
+
+        function markIrrelevant(jobId) {
+            if (!irrelevant.includes(jobId)) {
+                irrelevant.push(jobId);
+                applied = applied.filter(id => id !== jobId);
+                saveState();
+                render();
+            }
+        }
+
+        function undoJob(jobId, listType) {
+            if (listType === 'applied') {
+                applied = applied.filter(id => id !== jobId);
+            } else {
+                irrelevant = irrelevant.filter(id => id !== jobId);
+            }
+            saveState();
+            render();
+        }
+
+        function render() {
+            const mainJobs = allJobs.filter(j => !applied.includes(j.id) && !irrelevant.includes(j.id));
+            const appliedJobs = allJobs.filter(j => applied.includes(j.id));
+            const irrelevantJobs = allJobs.filter(j => irrelevant.includes(j.id));
+
+            // Group main jobs by source
+            const bySource = {};
+            mainJobs.forEach(job => {
+                if (!bySource[job.source]) bySource[job.source] = [];
+                bySource[job.source].push(job);
+            });
+
+            // Render main jobs
+            const mainContainer = document.getElementById('main-jobs');
+            if (mainJobs.length === 0) {
+                mainContainer.innerHTML = '<div class="section"><p class="empty">No matching positions found. Check back later!</p></div>';
+            } else {
+                let html = '';
+                for (const [source, jobs] of Object.entries(bySource)) {
+                    const sourceName = sourceNames[source] || source;
+                    html += `<div class="section"><h2>${sourceName} (${jobs.length})</h2><ul class="job-list">`;
+                    jobs.forEach(job => {
+                        html += createJobCard(job);
+                    });
+                    html += '</ul></div>';
+                }
+                mainContainer.innerHTML = html;
+            }
+
+            // Render applied
+            const appliedList = document.getElementById('applied-list');
+            const appliedEmpty = document.getElementById('applied-empty');
+            document.getElementById('applied-count').textContent = appliedJobs.length;
+            if (appliedJobs.length === 0) {
+                appliedList.innerHTML = '<li class="empty">No applications yet</li>';
+            } else {
+                appliedList.innerHTML = appliedJobs.map(j => createRightJobCard(j, 'applied')).join('');
+            }
+
+            // Render irrelevant
+            const irrelevantList = document.getElementById('irrelevant-list');
+            document.getElementById('irrelevant-count').textContent = irrelevantJobs.length;
+            if (irrelevantJobs.length === 0) {
+                irrelevantList.innerHTML = '<li class="empty">None marked</li>';
+            } else {
+                irrelevantList.innerHTML = irrelevantJobs.map(j => createRightJobCard(j, 'irrelevant')).join('');
+            }
+
+            // Update stats
+            document.getElementById('stat-total').textContent = mainJobs.length;
+            document.getElementById('stat-closing').textContent = mainJobs.filter(j => j.closing_soon).length;
+            document.getElementById('stat-high').textContent = mainJobs.filter(j => j.is_high_priority).length;
+        }
+
+        // Initial load from cloud
+        loadState();
+    </script>
 </body>
 </html>

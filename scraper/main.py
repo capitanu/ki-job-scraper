@@ -199,6 +199,20 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
         'academic_positions': 'Academic Positions'
     }
 
+    # Generate job data as JSON for JavaScript
+    import json
+    jobs_json = json.dumps([{
+        'id': job['id'],
+        'title': job['title'],
+        'url': job['url'],
+        'deadline': job.get('deadline'),
+        'deadline_date': job.get('deadline_date').isoformat() if job.get('deadline_date') and hasattr(job.get('deadline_date'), 'isoformat') else job.get('deadline_date'),
+        'source': job['source'],
+        'matched_keywords': job.get('matched_keywords', []),
+        'is_high_priority': job.get('is_high_priority', False),
+        'closing_soon': job.get('closing_soon', False)
+    } for job in matching_jobs])
+
     # Generate HTML
     html = f'''<!DOCTYPE html>
 <html lang="en">
@@ -228,9 +242,24 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
             line-height: 1.6;
             padding: 1rem;
         }}
-        .container {{
-            max-width: 900px;
+        .top-container {{
+            max-width: 1400px;
             margin: 0 auto;
+        }}
+        .main-layout {{
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }}
+        .left-column {{
+            min-width: 0;
+        }}
+        .right-column {{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }}
         header {{
             background: var(--primary);
@@ -276,6 +305,18 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--border);
         }}
+        .section.applied {{
+            border-left: 4px solid var(--success);
+        }}
+        .section.applied h2 {{
+            color: var(--success);
+        }}
+        .section.irrelevant {{
+            border-left: 4px solid #a0aec0;
+        }}
+        .section.irrelevant h2 {{
+            color: #718096;
+        }}
         .job-list {{
             list-style: none;
         }}
@@ -286,15 +327,48 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
         .job:last-child {{
             border-bottom: none;
         }}
+        .job-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }}
         .job-title {{
             font-weight: 600;
             color: var(--accent);
             text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
+            flex: 1;
         }}
         .job-title:hover {{
             text-decoration: underline;
+        }}
+        .job-actions {{
+            display: flex;
+            gap: 0.25rem;
+            flex-shrink: 0;
+        }}
+        .btn {{
+            padding: 0.25rem 0.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }}
+        .btn:hover {{
+            opacity: 0.8;
+        }}
+        .btn-applied {{
+            background: #c6f6d5;
+            color: var(--success);
+        }}
+        .btn-irrelevant {{
+            background: #e2e8f0;
+            color: #718096;
+        }}
+        .btn-undo {{
+            background: #fed7d7;
+            color: #c53030;
         }}
         .job-meta {{
             display: flex;
@@ -302,6 +376,7 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
             flex-wrap: wrap;
             font-size: 0.85rem;
             color: #718096;
+            margin-top: 0.5rem;
         }}
         .badge {{
             display: inline-block;
@@ -331,7 +406,8 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
         .empty {{
             color: #a0aec0;
             text-align: center;
-            padding: 2rem;
+            padding: 1rem;
+            font-size: 0.9rem;
         }}
         footer {{
             text-align: center;
@@ -341,18 +417,6 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
         }}
         footer a {{
             color: var(--accent);
-        }}
-        @media (max-width: 600px) {{
-            body {{
-                padding: 0.5rem;
-            }}
-            header {{
-                padding: 1rem;
-            }}
-            .job-meta {{
-                flex-direction: column;
-                gap: 0.5rem;
-            }}
         }}
         .easter-egg {{
             text-align: center;
@@ -375,10 +439,61 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
             font-size: 1.1rem;
             font-weight: 500;
         }}
+        .right-job {{
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.85rem;
+        }}
+        .right-job:last-child {{
+            border-bottom: none;
+        }}
+        .right-job-title {{
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.25rem;
+        }}
+        .right-job-title:hover {{
+            text-decoration: underline;
+        }}
+        .right-job-meta {{
+            font-size: 0.75rem;
+            color: #718096;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }}
+        @media (max-width: 900px) {{
+            .main-layout {{
+                grid-template-columns: 1fr;
+            }}
+            .right-column {{
+                order: -1;
+            }}
+        }}
+        @media (max-width: 600px) {{
+            body {{
+                padding: 0.5rem;
+            }}
+            header {{
+                padding: 1rem;
+            }}
+            .job-meta {{
+                flex-direction: column;
+                gap: 0.5rem;
+            }}
+            .job-header {{
+                flex-direction: column;
+            }}
+            .job-actions {{
+                align-self: flex-start;
+            }}
+        }}
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="top-container">
         <div class="easter-egg">
             <img src="andrada.jpeg" alt="Andrada Balmez">
             <p>Future PhD Student: Andrada Balmez</p>
@@ -388,76 +503,233 @@ def generate_dashboard(matching_jobs: List[Dict], last_updated: str) -> None:
             <p class="subtitle">PhD &amp; Research positions at Karolinska Institutet</p>
             <p class="subtitle">Focus: iPSC/Organoids, Single-cell, Neuroscience</p>
             <div class="stats">
-                <div class="stat"><strong>{len(matching_jobs)}</strong> matching positions</div>
-                <div class="stat"><strong>{sum(1 for j in matching_jobs if j.get('closing_soon'))}</strong> closing soon</div>
-                <div class="stat"><strong>{sum(1 for j in matching_jobs if j.get('is_high_priority'))}</strong> high priority</div>
+                <div class="stat"><strong id="stat-total">{len(matching_jobs)}</strong> matching positions</div>
+                <div class="stat"><strong id="stat-closing">{sum(1 for j in matching_jobs if j.get('closing_soon'))}</strong> closing soon</div>
+                <div class="stat"><strong id="stat-high">{sum(1 for j in matching_jobs if j.get('is_high_priority'))}</strong> high priority</div>
             </div>
         </header>
-'''
-
-    if not matching_jobs:
-        html += '''
-        <div class="section">
-            <p class="empty">No matching positions found. Check back later!</p>
-        </div>
-'''
-    else:
-        for source, jobs in by_source.items():
-            source_display = source_names.get(source, source)
-            html += f'''
-        <div class="section">
-            <h2>{source_display} ({len(jobs)})</h2>
-            <ul class="job-list">
-'''
-            for job in jobs:
-                badges = []
-                if job.get('is_high_priority'):
-                    badges.append('<span class="badge badge-high">High Priority</span>')
-                if job.get('closing_soon'):
-                    badges.append('<span class="badge badge-closing">Closing Soon</span>')
-
-                # Format deadline consistently
-                deadline_date = job.get('deadline_date')
-                if deadline_date:
-                    if isinstance(deadline_date, str):
-                        try:
-                            deadline_date = datetime.fromisoformat(deadline_date)
-                        except ValueError:
-                            deadline_date = None
-                    if deadline_date:
-                        deadline_text = f"Deadline: {deadline_date.strftime('%d %b %Y')}"
-                    else:
-                        deadline_text = f"Deadline: {job.get('deadline', 'Not specified')}"
-                else:
-                    deadline_text = f"Deadline: {job.get('deadline', 'Not specified')}"
-
-                keywords_html = ''.join(
-                    f'<span class="badge badge-keyword">{kw}</span>'
-                    for kw in job.get('matched_keywords', [])
-                )
-
-                html += f'''
-                <li class="job">
-                    <a href="{job['url']}" class="job-title" target="_blank">{job['title']}</a>
-                    <div class="job-meta">
-                        <span>{deadline_text}</span>
-                        {' '.join(badges)}
-                    </div>
-                    <div class="keywords">{keywords_html}</div>
-                </li>
-'''
-
-            html += '''
-            </ul>
-        </div>
-'''
-
-    html += f'''
-        <footer>
-            <p>Last updated: {last_updated}</p>
-            <p>Subscribe to notifications: <a href="https://ntfy.sh/andrada-ki-jobs">ntfy.sh/andrada-ki-jobs</a></p>
-        </footer>
     </div>
+
+    <div class="main-layout">
+        <div class="left-column" id="main-jobs">
+            <div class="section"><p class="empty">Loading...</p></div>
+        </div>
+        <div class="right-column">
+            <div class="section applied">
+                <h2>Applied (<span id="applied-count">0</span>)</h2>
+                <ul class="job-list" id="applied-list">
+                    <li class="empty" id="applied-empty">No applications yet</li>
+                </ul>
+            </div>
+            <div class="section irrelevant">
+                <h2>Irrelevant (<span id="irrelevant-count">0</span>)</h2>
+                <ul class="job-list" id="irrelevant-list">
+                    <li class="empty" id="irrelevant-empty">None marked</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Last updated: {last_updated}</p>
+        <p>Subscribe to notifications: <a href="https://ntfy.sh/andrada-ki-jobs">ntfy.sh/andrada-ki-jobs</a></p>
+    </footer>
+
+    <script>
+        const allJobs = {jobs_json};
+        const sourceNames = {{
+            'ki_doktorand': 'KI Doctoral Positions',
+            'ki_varbi': 'KI Staff Positions',
+            'academic_positions': 'Academic Positions'
+        }};
+
+        const BLOB_ID = '019c1a9c-c9c0-762a-b95c-f4a137f1956f';
+        const BLOB_URL = `https://jsonblob.com/api/jsonBlob/${{BLOB_ID}}`;
+
+        let applied = [];
+        let irrelevant = [];
+        let saveTimeout = null;
+
+        // Load state from jsonblob
+        async function loadState() {{
+            try {{
+                const res = await fetch(BLOB_URL);
+                if (res.ok) {{
+                    const data = await res.json();
+                    applied = data.applied || [];
+                    irrelevant = data.irrelevant || [];
+                }}
+            }} catch (e) {{
+                console.error('Failed to load state:', e);
+                // Fall back to localStorage
+                applied = JSON.parse(localStorage.getItem('ki-jobs-applied') || '[]');
+                irrelevant = JSON.parse(localStorage.getItem('ki-jobs-irrelevant') || '[]');
+            }}
+            render();
+        }}
+
+        // Save state to jsonblob (debounced)
+        function saveState() {{
+            // Also save to localStorage as backup
+            localStorage.setItem('ki-jobs-applied', JSON.stringify(applied));
+            localStorage.setItem('ki-jobs-irrelevant', JSON.stringify(irrelevant));
+
+            // Debounce cloud save
+            if (saveTimeout) clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(async () => {{
+                try {{
+                    await fetch(BLOB_URL, {{
+                        method: 'PUT',
+                        headers: {{ 'Content-Type': 'application/json' }},
+                        body: JSON.stringify({{ applied, irrelevant }})
+                    }});
+                }} catch (e) {{
+                    console.error('Failed to save state:', e);
+                }}
+            }}, 500);
+        }}
+
+        function formatDate(dateStr) {{
+            if (!dateStr) return 'Not specified';
+            try {{
+                const date = new Date(dateStr);
+                return date.toLocaleDateString('en-GB', {{ day: '2-digit', month: 'short', year: 'numeric' }});
+            }} catch {{
+                return dateStr;
+            }}
+        }}
+
+        function createJobCard(job, showUndo = false, undoAction = null) {{
+            const badges = [];
+            if (job.is_high_priority) badges.push('<span class="badge badge-high">High Priority</span>');
+            if (job.closing_soon) badges.push('<span class="badge badge-closing">Closing Soon</span>');
+
+            const keywords = job.matched_keywords.map(k => `<span class="badge badge-keyword">${{k}}</span>`).join('');
+            const deadline = formatDate(job.deadline_date || job.deadline);
+
+            let actions = '';
+            if (showUndo) {{
+                actions = `<button class="btn btn-undo" onclick="undoJob('${{job.id}}', '${{undoAction}}')">Undo</button>`;
+            }} else {{
+                actions = `
+                    <button class="btn btn-applied" onclick="markApplied('${{job.id}}')">Applied</button>
+                    <button class="btn btn-irrelevant" onclick="markIrrelevant('${{job.id}}')">Irrelevant</button>
+                `;
+            }}
+
+            return `
+                <li class="job" data-job-id="${{job.id}}">
+                    <div class="job-header">
+                        <a href="${{job.url}}" class="job-title" target="_blank">${{job.title}}</a>
+                        <div class="job-actions">${{actions}}</div>
+                    </div>
+                    <div class="job-meta">
+                        <span>Deadline: ${{deadline}}</span>
+                        ${{badges.join(' ')}}
+                    </div>
+                    <div class="keywords">${{keywords}}</div>
+                </li>
+            `;
+        }}
+
+        function createRightJobCard(job, listType) {{
+            const deadline = formatDate(job.deadline_date || job.deadline);
+            return `
+                <li class="right-job" data-job-id="${{job.id}}">
+                    <a href="${{job.url}}" class="right-job-title" target="_blank">${{job.title}}</a>
+                    <div class="right-job-meta">
+                        <span>${{deadline}}</span>
+                        <button class="btn btn-undo" onclick="undoJob('${{job.id}}', '${{listType}}')">Undo</button>
+                    </div>
+                </li>
+            `;
+        }}
+
+        function markApplied(jobId) {{
+            if (!applied.includes(jobId)) {{
+                applied.push(jobId);
+                irrelevant = irrelevant.filter(id => id !== jobId);
+                saveState();
+                render();
+            }}
+        }}
+
+        function markIrrelevant(jobId) {{
+            if (!irrelevant.includes(jobId)) {{
+                irrelevant.push(jobId);
+                applied = applied.filter(id => id !== jobId);
+                saveState();
+                render();
+            }}
+        }}
+
+        function undoJob(jobId, listType) {{
+            if (listType === 'applied') {{
+                applied = applied.filter(id => id !== jobId);
+            }} else {{
+                irrelevant = irrelevant.filter(id => id !== jobId);
+            }}
+            saveState();
+            render();
+        }}
+
+        function render() {{
+            const mainJobs = allJobs.filter(j => !applied.includes(j.id) && !irrelevant.includes(j.id));
+            const appliedJobs = allJobs.filter(j => applied.includes(j.id));
+            const irrelevantJobs = allJobs.filter(j => irrelevant.includes(j.id));
+
+            // Group main jobs by source
+            const bySource = {{}};
+            mainJobs.forEach(job => {{
+                if (!bySource[job.source]) bySource[job.source] = [];
+                bySource[job.source].push(job);
+            }});
+
+            // Render main jobs
+            const mainContainer = document.getElementById('main-jobs');
+            if (mainJobs.length === 0) {{
+                mainContainer.innerHTML = '<div class="section"><p class="empty">No matching positions found. Check back later!</p></div>';
+            }} else {{
+                let html = '';
+                for (const [source, jobs] of Object.entries(bySource)) {{
+                    const sourceName = sourceNames[source] || source;
+                    html += `<div class="section"><h2>${{sourceName}} (${{jobs.length}})</h2><ul class="job-list">`;
+                    jobs.forEach(job => {{
+                        html += createJobCard(job);
+                    }});
+                    html += '</ul></div>';
+                }}
+                mainContainer.innerHTML = html;
+            }}
+
+            // Render applied
+            const appliedList = document.getElementById('applied-list');
+            const appliedEmpty = document.getElementById('applied-empty');
+            document.getElementById('applied-count').textContent = appliedJobs.length;
+            if (appliedJobs.length === 0) {{
+                appliedList.innerHTML = '<li class="empty">No applications yet</li>';
+            }} else {{
+                appliedList.innerHTML = appliedJobs.map(j => createRightJobCard(j, 'applied')).join('');
+            }}
+
+            // Render irrelevant
+            const irrelevantList = document.getElementById('irrelevant-list');
+            document.getElementById('irrelevant-count').textContent = irrelevantJobs.length;
+            if (irrelevantJobs.length === 0) {{
+                irrelevantList.innerHTML = '<li class="empty">None marked</li>';
+            }} else {{
+                irrelevantList.innerHTML = irrelevantJobs.map(j => createRightJobCard(j, 'irrelevant')).join('');
+            }}
+
+            // Update stats
+            document.getElementById('stat-total').textContent = mainJobs.length;
+            document.getElementById('stat-closing').textContent = mainJobs.filter(j => j.closing_soon).length;
+            document.getElementById('stat-high').textContent = mainJobs.filter(j => j.is_high_priority).length;
+        }}
+
+        // Initial load from cloud
+        loadState();
+    </script>
 </body>
 </html>
 '''
