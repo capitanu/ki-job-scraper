@@ -45,16 +45,6 @@
         "immunology"
       ]
     },
-    "ki_doktorand_895780": {
-      "first_seen": "2026-02-01T20:03:42.917532",
-      "title": "Doctoral (PhD) student position in infection biology",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:895780/",
-      "source": "ki_doktorand",
-      "deadline": "03.Feb.2026",
-      "matched_keywords": [
-        "immunology"
-      ]
-    },
     "ki_doktorand_894301": {
       "first_seen": "2026-02-01T20:03:42.918575",
       "title": "Examining long non-coding RNA function in human adipocytes",
@@ -189,5 +179,5 @@
       ]
     }
   },
-  "last_updated": "2026-02-03T08:29:40.292794"
+  "last_updated": "2026-02-04T08:32:42.590698"
 }
