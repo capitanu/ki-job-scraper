@@ -177,7 +177,27 @@
         "bioinformatics",
         "immunology"
       ]
+    },
+    "ki_doktorand_899571": {
+      "first_seen": "2026-02-05T08:35:27.782490",
+      "title": "PhD position - bioimaging approaches in neuroscience Theme: Neural basis of survival behaviors",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:899571/",
+      "source": "ki_doktorand",
+      "deadline": "20.Mar.2026",
+      "matched_keywords": [
+        "neuroscience"
+      ]
+    },
+    "ki_doktorand_900575": {
+      "first_seen": "2026-02-05T08:35:27.783489",
+      "title": "Doctoral (PhD) student position in biostatistics",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:900575/",
+      "source": "ki_doktorand",
+      "deadline": "25.Feb.2026",
+      "matched_keywords": [
+        "bioinformatics"
+      ]
     }
   },
-  "last_updated": "2026-02-04T08:32:42.590698"
+  "last_updated": "2026-02-05T08:35:28.112322"
 }
