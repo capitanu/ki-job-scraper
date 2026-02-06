@@ -56,16 +56,6 @@
         "genetics"
       ]
     },
-    "ki_doktorand_892468": {
-      "first_seen": "2026-02-01T20:03:42.919160",
-      "title": "PhD position in Network Medicine",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:892468/",
-      "source": "ki_doktorand",
-      "deadline": "05.Feb.2026",
-      "matched_keywords": [
-        "genetics"
-      ]
-    },
     "ki_doktorand_891486": {
       "first_seen": "2026-02-01T20:03:42.920181",
       "title": "Doctoral position in Systems Neuroscience",
@@ -197,7 +187,27 @@
       "matched_keywords": [
         "bioinformatics"
       ]
+    },
+    "ki_varbi_900414": {
+      "first_seen": "2026-02-06T08:33:40.019529",
+      "title": "Research specialist in single-cell genomics and malaria",
+      "url": "https://ki.varbi.com/en/what:job/jobID:900414/",
+      "source": "ki_varbi",
+      "deadline": "2026-02-20",
+      "matched_keywords": [
+        "single-cell"
+      ]
+    },
+    "ki_varbi_900878": {
+      "first_seen": "2026-02-06T08:33:40.019714",
+      "title": "Senior Research Infrastructure Specialist in vaccine immunology",
+      "url": "https://ki.varbi.com/en/what:job/jobID:900878/",
+      "source": "ki_varbi",
+      "deadline": "2026-02-18",
+      "matched_keywords": [
+        "immunology"
+      ]
     }
   },
-  "last_updated": "2026-02-05T08:35:28.112322"
+  "last_updated": "2026-02-06T08:33:40.323129"
 }
