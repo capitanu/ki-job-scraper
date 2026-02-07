@@ -35,16 +35,6 @@
         "neurodevelopmental"
       ]
     },
-    "ki_doktorand_896279": {
-      "first_seen": "2026-02-01T20:03:42.917069",
-      "title": "Doctoral (PhD) student position in Virology and Immunology",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:896279/",
-      "source": "ki_doktorand",
-      "deadline": "06.Feb.2026",
-      "matched_keywords": [
-        "immunology"
-      ]
-    },
     "ki_doktorand_894301": {
       "first_seen": "2026-02-01T20:03:42.918575",
       "title": "Examining long non-coding RNA function in human adipocytes",
@@ -209,5 +199,5 @@
       ]
     }
   },
-  "last_updated": "2026-02-06T08:33:40.323129"
+  "last_updated": "2026-02-07T08:22:59.758693"
 }
