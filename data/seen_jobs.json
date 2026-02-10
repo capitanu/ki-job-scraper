@@ -35,17 +35,6 @@
         "neurodevelopmental"
       ]
     },
-    "ki_doktorand_894301": {
-      "first_seen": "2026-02-01T20:03:42.918575",
-      "title": "Examining long non-coding RNA function in human adipocytes",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:894301/",
-      "source": "ki_doktorand",
-      "deadline": "09.Feb.2026",
-      "matched_keywords": [
-        "molecular biology",
-        "genetics"
-      ]
-    },
     "ki_doktorand_891486": {
       "first_seen": "2026-02-01T20:03:42.920181",
       "title": "Doctoral position in Systems Neuroscience",
@@ -199,5 +188,5 @@
       ]
     }
   },
-  "last_updated": "2026-02-09T08:42:03.246560"
+  "last_updated": "2026-02-10T08:42:39.703291"
 }
