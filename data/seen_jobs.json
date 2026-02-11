@@ -35,17 +35,6 @@
         "neurodevelopmental"
       ]
     },
-    "ki_doktorand_891486": {
-      "first_seen": "2026-02-01T20:03:42.920181",
-      "title": "Doctoral position in Systems Neuroscience",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:891486/",
-      "source": "ki_doktorand",
-      "deadline": "10.Feb.2026",
-      "matched_keywords": [
-        "neuroscience",
-        "single-cell"
-      ]
-    },
     "ki_doktorand_892020": {
       "first_seen": "2026-02-01T20:03:42.920644",
       "title": "Doctoral (PhD) student position in molecular epidemiology with focus on cardiovascular diseases",
@@ -94,26 +83,6 @@
       "deadline": "2026-02-11",
       "matched_keywords": [
         "spatial transcriptomics"
-      ]
-    },
-    "ki_varbi_889495": {
-      "first_seen": "2026-02-01T20:03:42.922571",
-      "title": "Research Specialist in Pluripotent Stem Cell derived Cell Therapies",
-      "url": "https://ki.varbi.com/en/what:job/jobID:889495/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-10",
-      "matched_keywords": [
-        "stem cell"
-      ]
-    },
-    "ki_varbi_896298": {
-      "first_seen": "2026-02-01T20:03:42.922616",
-      "title": "Research Assistant in Immunology",
-      "url": "https://ki.varbi.com/en/what:job/jobID:896298/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-10",
-      "matched_keywords": [
-        "immunology"
       ]
     },
     "ki_varbi_895416": {
@@ -186,7 +155,17 @@
       "matched_keywords": [
         "immunology"
       ]
+    },
+    "ki_varbi_902638": {
+      "first_seen": "2026-02-11T08:40:10.264908",
+      "title": "Research Assistant in Experimental Neuroscience",
+      "url": "https://ki.varbi.com/en/what:job/jobID:902638/",
+      "source": "ki_varbi",
+      "deadline": "2026-02-25",
+      "matched_keywords": [
+        "neuroscience"
+      ]
     }
   },
-  "last_updated": "2026-02-10T08:42:39.703291"
+  "last_updated": "2026-02-11T08:40:10.466372"
 }
