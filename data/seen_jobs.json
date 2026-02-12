@@ -75,16 +75,6 @@
         "immunology"
       ]
     },
-    "ki_varbi_898365": {
-      "first_seen": "2026-02-01T20:03:42.922519",
-      "title": "Research Assistant in Spatial Transcriptomics of Human Adipose Tissue",
-      "url": "https://ki.varbi.com/en/what:job/jobID:898365/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-11",
-      "matched_keywords": [
-        "spatial transcriptomics"
-      ]
-    },
     "ki_varbi_895416": {
       "first_seen": "2026-02-01T20:03:42.923056",
       "title": "Lab manager in organoid technology, endoderm biology and omics.",
@@ -165,7 +155,17 @@
       "matched_keywords": [
         "neuroscience"
       ]
+    },
+    "ki_doktorand_901806": {
+      "first_seen": "2026-02-12T08:38:00.810156",
+      "title": "PhD position in mechanisms of CNS regeneration",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:901806/",
+      "source": "ki_doktorand",
+      "deadline": "06.Mar.2026",
+      "matched_keywords": [
+        "molecular biology"
+      ]
     }
   },
-  "last_updated": "2026-02-11T08:40:10.466372"
+  "last_updated": "2026-02-12T08:38:01.106354"
 }
