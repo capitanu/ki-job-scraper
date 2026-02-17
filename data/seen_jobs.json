@@ -55,27 +55,6 @@
         "neuroscience"
       ]
     },
-    "ki_varbi_893855": {
-      "first_seen": "2026-02-01T20:03:42.923105",
-      "title": "Research Assistant in Neuroscience",
-      "url": "https://ki.varbi.com/en/what:job/jobID:893855/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-16",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
-    "ki_varbi_899914": {
-      "first_seen": "2026-02-03T08:29:40.137952",
-      "title": "Post doctoral bioinformatics studies in vaccine immunology (scholarship)",
-      "url": "https://ki.varbi.com/en/what:job/jobID:899914/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-16",
-      "matched_keywords": [
-        "bioinformatics",
-        "immunology"
-      ]
-    },
     "ki_doktorand_899571": {
       "first_seen": "2026-02-05T08:35:27.782490",
       "title": "PhD position - bioimaging approaches in neuroscience Theme: Neural basis of survival behaviors",
@@ -137,5 +116,5 @@
       ]
     }
   },
-  "last_updated": "2026-02-16T08:38:26.409760"
+  "last_updated": "2026-02-17T08:37:01.238486"
 }
