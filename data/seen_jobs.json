@@ -10,21 +10,6 @@
         "genetic engineering"
       ]
     },
-    "ki_doktorand_880275": {
-      "first_seen": "2026-02-01T20:03:42.915993",
-      "title": "Doctoral (PhD) student position in Genetic Modification of NK cells",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:880275/",
-      "source": "ki_doktorand",
-      "deadline": "17.Feb.2026",
-      "matched_keywords": [
-        "crispr",
-        "cell culture",
-        "molecular biology",
-        "immunology",
-        "immunotherapies",
-        "genetic engineering"
-      ]
-    },
     "ki_doktorand_879039": {
       "first_seen": "2026-02-01T20:03:42.916481",
       "title": "Doctoral (PhD) student position in online autism support",
@@ -114,7 +99,17 @@
       "matched_keywords": [
         "molecular biology"
       ]
+    },
+    "ki_doktorand_904581": {
+      "first_seen": "2026-02-18T08:37:11.239029",
+      "title": "Doctoral (PhD) student position in Molecular Virology and Immunology",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:904581/",
+      "source": "ki_doktorand",
+      "deadline": "02.Mar.2026",
+      "matched_keywords": [
+        "immunology"
+      ]
     }
   },
-  "last_updated": "2026-02-17T08:37:01.238486"
+  "last_updated": "2026-02-18T08:37:11.609133"
 }
