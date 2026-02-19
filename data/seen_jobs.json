@@ -70,16 +70,6 @@
         "single-cell"
       ]
     },
-    "ki_varbi_900878": {
-      "first_seen": "2026-02-06T08:33:40.019714",
-      "title": "Senior Research Infrastructure Specialist in vaccine immunology",
-      "url": "https://ki.varbi.com/en/what:job/jobID:900878/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-18",
-      "matched_keywords": [
-        "immunology"
-      ]
-    },
     "ki_varbi_902638": {
       "first_seen": "2026-02-11T08:40:10.264908",
       "title": "Research Assistant in Experimental Neuroscience",
@@ -111,5 +101,5 @@
       ]
     }
   },
-  "last_updated": "2026-02-18T08:37:11.609133"
+  "last_updated": "2026-02-19T08:35:45.446445"
 }
