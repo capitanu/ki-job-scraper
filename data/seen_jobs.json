@@ -99,7 +99,17 @@
       "matched_keywords": [
         "immunology"
       ]
+    },
+    "ki_varbi_905387": {
+      "first_seen": "2026-02-20T08:33:08.617869",
+      "title": "Research assistant in Computational Genomics / Bioinformatics",
+      "url": "https://ki.varbi.com/en/what:job/jobID:905387/",
+      "source": "ki_varbi",
+      "deadline": "2026-03-06",
+      "matched_keywords": [
+        "bioinformatics"
+      ]
     }
   },
-  "last_updated": "2026-02-19T08:35:45.446445"
+  "last_updated": "2026-02-20T08:33:08.875643"
 }
