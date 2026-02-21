@@ -40,16 +40,6 @@
         "neuroscience"
       ]
     },
-    "ki_doktorand_899571": {
-      "first_seen": "2026-02-05T08:35:27.782490",
-      "title": "PhD position - bioimaging approaches in neuroscience Theme: Neural basis of survival behaviors",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:899571/",
-      "source": "ki_doktorand",
-      "deadline": "20.Mar.2026",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
     "ki_doktorand_900575": {
       "first_seen": "2026-02-05T08:35:27.783489",
       "title": "Doctoral (PhD) student position in biostatistics",
@@ -58,16 +48,6 @@
       "deadline": "25.Feb.2026",
       "matched_keywords": [
         "bioinformatics"
-      ]
-    },
-    "ki_varbi_900414": {
-      "first_seen": "2026-02-06T08:33:40.019529",
-      "title": "Research specialist in single-cell genomics and malaria",
-      "url": "https://ki.varbi.com/en/what:job/jobID:900414/",
-      "source": "ki_varbi",
-      "deadline": "2026-02-20",
-      "matched_keywords": [
-        "single-cell"
       ]
     },
     "ki_varbi_902638": {
@@ -111,5 +91,5 @@
       ]
     }
   },
-  "last_updated": "2026-02-20T08:33:08.875643"
+  "last_updated": "2026-02-21T08:22:07.921542"
 }
