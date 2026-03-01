@@ -1,15 +1,5 @@
 {
   "jobs": {
-    "ki_doktorand_896801": {
-      "first_seen": "2026-02-01T20:03:42.915545",
-      "title": "Doctoral position in\u201dNew Oligonucleotide Constructs for Enhanced Delivery\u201d",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:896801/",
-      "source": "ki_doktorand",
-      "deadline": "28.Feb.2026",
-      "matched_keywords": [
-        "genetic engineering"
-      ]
-    },
     "ki_doktorand_879932": {
       "first_seen": "2026-02-01T20:03:42.921689",
       "title": "PhD position \u2013 Computational Neuroscience and Systems Biology. Theme: Neural dynamics underlying survival behaviors",
@@ -81,5 +71,5 @@
       ]
     }
   },
-  "last_updated": "2026-02-28T08:20:27.021841"
+  "last_updated": "2026-03-01T08:23:09.429618"
 }
