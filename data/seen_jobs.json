@@ -30,16 +30,6 @@
         "molecular biology"
       ]
     },
-    "ki_doktorand_904581": {
-      "first_seen": "2026-02-18T08:37:11.239029",
-      "title": "Doctoral (PhD) student position in Molecular Virology and Immunology",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:904581/",
-      "source": "ki_doktorand",
-      "deadline": "02.Mar.2026",
-      "matched_keywords": [
-        "immunology"
-      ]
-    },
     "ki_varbi_905387": {
       "first_seen": "2026-02-20T08:33:08.617869",
       "title": "Research assistant in Computational Genomics / Bioinformatics",
@@ -69,7 +59,17 @@
       "matched_keywords": [
         "cell culture"
       ]
+    },
+    "ki_doktorand_906704": {
+      "first_seen": "2026-03-03T08:32:22.023018",
+      "title": "PhD Position: Development and evaluation of AI-based support for physical activity after stroke",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:906704/",
+      "source": "ki_doktorand",
+      "deadline": "23.Mar.2026",
+      "matched_keywords": [
+        "neuroscience"
+      ]
     }
   },
-  "last_updated": "2026-03-02T08:35:58.152880"
+  "last_updated": "2026-03-03T08:32:22.282142"
 }
