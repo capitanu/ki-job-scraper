@@ -80,7 +80,17 @@
         "bioinformatics",
         "molecular biology"
       ]
+    },
+    "ki_doktorand_910236": {
+      "first_seen": "2026-03-05T08:32:41.673540",
+      "title": "Doctoral (PhD) student position in Mitochondrial Biology",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:910236/",
+      "source": "ki_doktorand",
+      "deadline": "25.Mar.2026",
+      "matched_keywords": [
+        "molecular biology"
+      ]
     }
   },
-  "last_updated": "2026-03-04T08:31:00.846335"
+  "last_updated": "2026-03-05T08:32:41.809880"
 }
