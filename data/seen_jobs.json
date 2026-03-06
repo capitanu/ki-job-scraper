@@ -90,7 +90,27 @@
       "matched_keywords": [
         "molecular biology"
       ]
+    },
+    "ki_doktorand_910383": {
+      "first_seen": "2026-03-06T08:29:47.226078",
+      "title": "Doktorand i klinisk barnpsykologi med inriktning mot autism och adhd",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:910383/",
+      "source": "ki_doktorand",
+      "deadline": null,
+      "matched_keywords": [
+        "neurodevelopmental"
+      ]
+    },
+    "ki_varbi_903116": {
+      "first_seen": "2026-03-06T08:29:47.236932",
+      "title": "Senior Lecturer in Neuroscience",
+      "url": "https://ki.varbi.com/en/what:job/jobID:903116/",
+      "source": "ki_varbi",
+      "deadline": "2026-04-01",
+      "matched_keywords": [
+        "neuroscience"
+      ]
     }
   },
-  "last_updated": "2026-03-05T08:32:41.809880"
+  "last_updated": "2026-03-06T08:29:47.670857"
 }
