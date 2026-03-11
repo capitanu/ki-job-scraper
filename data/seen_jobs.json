@@ -110,7 +110,27 @@
       "matched_keywords": [
         "neuroscience"
       ]
+    },
+    "ki_doktorand_911858": {
+      "first_seen": "2026-03-11T08:32:58.878507",
+      "title": "Doctoral (PhD) student position in adipocyte systems biology",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:911858/",
+      "source": "ki_doktorand",
+      "deadline": "09.Apr.2026",
+      "matched_keywords": [
+        "cell culture"
+      ]
+    },
+    "ki_varbi_912703": {
+      "first_seen": "2026-03-11T08:32:58.891694",
+      "title": "Research Assistant in Spatial and Single-cell omics of Human Adipose Tissue",
+      "url": "https://ki.varbi.com/en/what:job/jobID:912703/",
+      "source": "ki_varbi",
+      "deadline": "2026-04-09",
+      "matched_keywords": [
+        "single-cell"
+      ]
     }
   },
-  "last_updated": "2026-03-10T08:33:16.956648"
+  "last_updated": "2026-03-11T08:32:59.264271"
 }
