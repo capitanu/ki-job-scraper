@@ -133,7 +133,37 @@
         "immunology",
         "immunotherapies"
       ]
+    },
+    "ki_doktorand_916002": {
+      "first_seen": "2026-03-19T08:34:51.459907",
+      "title": "Doctoral (PhD) position in oral biology and medicine",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:916002/",
+      "source": "ki_doktorand",
+      "deadline": "18.Apr.2026",
+      "matched_keywords": [
+        "cell culture"
+      ]
+    },
+    "ki_varbi_915820": {
+      "first_seen": "2026-03-19T08:34:51.476627",
+      "title": "Research specialist in Molecular Neuroscience",
+      "url": "https://ki.varbi.com/en/what:job/jobID:915820/",
+      "source": "ki_varbi",
+      "deadline": "2026-04-02",
+      "matched_keywords": [
+        "neuroscience"
+      ]
+    },
+    "ki_varbi_911987": {
+      "first_seen": "2026-03-19T08:34:51.476678",
+      "title": "Research assistant in clinical neuroscience",
+      "url": "https://ki.varbi.com/en/what:job/jobID:911987/",
+      "source": "ki_varbi",
+      "deadline": "2026-04-01",
+      "matched_keywords": [
+        "neuroscience"
+      ]
     }
   },
-  "last_updated": "2026-03-18T08:39:46.862389"
+  "last_updated": "2026-03-19T08:34:51.962122"
 }
