@@ -164,7 +164,20 @@
         "single-cell",
         "bioinformatics"
       ]
+    },
+    "ki_doktorand_916885": {
+      "first_seen": "2026-03-21T08:24:02.288537",
+      "title": "Doctoral (PhD) student position in Systems Mucosal Immunology of Host\u2013Microbiome Interactions in Intestinal Inflammation",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:916885/",
+      "source": "ki_doktorand",
+      "deadline": "03.Apr.2026",
+      "matched_keywords": [
+        "organoid",
+        "single-cell",
+        "spatial transcriptomics",
+        "immunology"
+      ]
     }
   },
-  "last_updated": "2026-03-20T08:33:25.214791"
+  "last_updated": "2026-03-21T08:24:02.496768"
 }
