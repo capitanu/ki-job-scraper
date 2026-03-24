@@ -71,16 +71,6 @@
         "neuroscience"
       ]
     },
-    "ki_varbi_910897": {
-      "first_seen": "2026-03-09T08:36:26.543060",
-      "title": "Research Specialist in Single-cell Chromatin Genomics",
-      "url": "https://ki.varbi.com/en/what:job/jobID:910897/",
-      "source": "ki_varbi",
-      "deadline": "2026-03-23",
-      "matched_keywords": [
-        "single-cell"
-      ]
-    },
     "ki_varbi_912228": {
       "first_seen": "2026-03-10T08:33:16.253968",
       "title": "Research Assistant in Systems Neuroscience Neural basis of survival behaviors",
@@ -179,5 +169,5 @@
       ]
     }
   },
-  "last_updated": "2026-03-23T08:47:08.596339"
+  "last_updated": "2026-03-24T08:42:49.022308"
 }
