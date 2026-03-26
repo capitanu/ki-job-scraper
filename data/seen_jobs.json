@@ -40,43 +40,12 @@
         "neuroscience"
       ]
     },
-    "ki_doktorand_909886": {
-      "first_seen": "2026-03-04T08:31:00.596251",
-      "title": "Doctoral (PhD) student position in mRNA translation and resistance to endocrine therapy",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:909886/",
-      "source": "ki_doktorand",
-      "deadline": "25.Mar.2026",
-      "matched_keywords": [
-        "bioinformatics",
-        "molecular biology"
-      ]
-    },
-    "ki_doktorand_910236": {
-      "first_seen": "2026-03-05T08:32:41.673540",
-      "title": "Doctoral (PhD) student position in Mitochondrial Biology",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:910236/",
-      "source": "ki_doktorand",
-      "deadline": "25.Mar.2026",
-      "matched_keywords": [
-        "molecular biology"
-      ]
-    },
     "ki_varbi_903116": {
       "first_seen": "2026-03-06T08:29:47.236932",
       "title": "Senior Lecturer in Neuroscience",
       "url": "https://ki.varbi.com/en/what:job/jobID:903116/",
       "source": "ki_varbi",
       "deadline": "2026-04-01",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
-    "ki_varbi_912228": {
-      "first_seen": "2026-03-10T08:33:16.253968",
-      "title": "Research Assistant in Systems Neuroscience Neural basis of survival behaviors",
-      "url": "https://ki.varbi.com/en/what:job/jobID:912228/",
-      "source": "ki_varbi",
-      "deadline": "2026-03-25",
       "matched_keywords": [
         "neuroscience"
       ]
@@ -169,5 +138,5 @@
       ]
     }
   },
-  "last_updated": "2026-03-25T08:41:13.618305"
+  "last_updated": "2026-03-26T08:45:13.057452"
 }
