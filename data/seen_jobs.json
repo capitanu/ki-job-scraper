@@ -126,7 +126,18 @@
         "spatial transcriptomics",
         "immunology"
       ]
+    },
+    "ki_doktorand_918947": {
+      "first_seen": "2026-03-28T08:31:50.841539",
+      "title": "Doctoral student position in Skeletal biology and Immunology",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:918947/",
+      "source": "ki_doktorand",
+      "deadline": "27.Apr.2026",
+      "matched_keywords": [
+        "stem cell",
+        "immunology"
+      ]
     }
   },
-  "last_updated": "2026-03-27T08:42:45.039498"
+  "last_updated": "2026-03-28T08:31:51.104803"
 }
