@@ -151,7 +151,38 @@
         "bioinformatics",
         "molecular biology"
       ]
+    },
+    "ki_doktorand_921097": {
+      "first_seen": "2026-04-01T08:56:11.498461",
+      "title": "Doctoral position in development of novel treatments for lung cancer",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:921097/",
+      "source": "ki_doktorand",
+      "deadline": "29.Apr.2026",
+      "matched_keywords": [
+        "molecular biology"
+      ]
+    },
+    "ki_doktorand_919938": {
+      "first_seen": "2026-04-01T08:56:11.499475",
+      "title": "PhD Position in Bioinformatics: Clinical Breast Cancer Proteomics",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:919938/",
+      "source": "ki_doktorand",
+      "deadline": "13.May.2026",
+      "matched_keywords": [
+        "bioinformatics",
+        "molecular biology"
+      ]
+    },
+    "ki_varbi_919080": {
+      "first_seen": "2026-04-01T08:56:11.515028",
+      "title": "Are you interested in discovering how metabolism affects stem cell aging?",
+      "url": "https://ki.varbi.com/en/what:job/jobID:919080/",
+      "source": "ki_varbi",
+      "deadline": "2026-05-15",
+      "matched_keywords": [
+        "stem cell"
+      ]
     }
   },
-  "last_updated": "2026-03-31T08:50:19.631422"
+  "last_updated": "2026-04-01T08:56:11.960883"
 }
