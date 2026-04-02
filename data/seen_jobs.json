@@ -30,16 +30,6 @@
         "neuroscience"
       ]
     },
-    "ki_varbi_903116": {
-      "first_seen": "2026-03-06T08:29:47.236932",
-      "title": "Senior Lecturer in Neuroscience",
-      "url": "https://ki.varbi.com/en/what:job/jobID:903116/",
-      "source": "ki_varbi",
-      "deadline": "2026-04-01",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
     "ki_doktorand_911858": {
       "first_seen": "2026-03-11T08:32:58.878507",
       "title": "Doctoral (PhD) student position in adipocyte systems biology",
@@ -89,16 +79,6 @@
       "url": "https://ki.varbi.com/en/what:job/jobID:915820/",
       "source": "ki_varbi",
       "deadline": "2026-04-02",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
-    "ki_varbi_911987": {
-      "first_seen": "2026-03-19T08:34:51.476678",
-      "title": "Research assistant in clinical neuroscience",
-      "url": "https://ki.varbi.com/en/what:job/jobID:911987/",
-      "source": "ki_varbi",
-      "deadline": "2026-04-01",
       "matched_keywords": [
         "neuroscience"
       ]
@@ -182,7 +162,18 @@
       "matched_keywords": [
         "stem cell"
       ]
+    },
+    "ki_doktorand_904374": {
+      "first_seen": "2026-04-02T08:48:55.578283",
+      "title": "Doctoral (PhD) student position in computational proteomics and AI for cancer precision medicine",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:904374/",
+      "source": "ki_doktorand",
+      "deadline": "07.May.2026",
+      "matched_keywords": [
+        "single-cell",
+        "bioinformatics"
+      ]
     }
   },
-  "last_updated": "2026-04-01T08:56:11.960883"
+  "last_updated": "2026-04-02T08:48:55.802275"
 }
