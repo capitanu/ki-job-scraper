@@ -50,19 +50,6 @@
         "single-cell"
       ]
     },
-    "ki_doktorand_910639": {
-      "first_seen": "2026-03-14T08:26:52.050369",
-      "title": "Doctoral (PhD) student position in NK cell immunotherapy for gastric cancer",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:910639/",
-      "source": "ki_doktorand",
-      "deadline": "02.Apr.2026",
-      "matched_keywords": [
-        "single-cell",
-        "genome editing",
-        "immunology",
-        "immunotherapies"
-      ]
-    },
     "ki_doktorand_916002": {
       "first_seen": "2026-03-19T08:34:51.459907",
       "title": "Doctoral (PhD) position in oral biology and medicine",
@@ -71,27 +58,6 @@
       "deadline": "18.Apr.2026",
       "matched_keywords": [
         "cell culture"
-      ]
-    },
-    "ki_varbi_915820": {
-      "first_seen": "2026-03-19T08:34:51.476627",
-      "title": "Research specialist in Molecular Neuroscience",
-      "url": "https://ki.varbi.com/en/what:job/jobID:915820/",
-      "source": "ki_varbi",
-      "deadline": "2026-04-02",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
-    "ki_doktorand_913252": {
-      "first_seen": "2026-03-20T08:33:25.047373",
-      "title": "Doctoral student position in bioinformatics",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:913252/",
-      "source": "ki_doktorand",
-      "deadline": "02.Apr.2026",
-      "matched_keywords": [
-        "single-cell",
-        "bioinformatics"
       ]
     },
     "ki_doktorand_916885": {
@@ -175,5 +141,5 @@
       ]
     }
   },
-  "last_updated": "2026-04-02T08:48:55.802275"
+  "last_updated": "2026-04-03T08:44:28.897408"
 }
