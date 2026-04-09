@@ -126,7 +126,32 @@
       "matched_keywords": [
         "immunology"
       ]
+    },
+    "ki_doktorand_922543": {
+      "first_seen": "2026-04-09T09:00:24.787732",
+      "title": "Doctoral (PhD) student position in NK cell immunology in human lung cancer",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:922543/",
+      "source": "ki_doktorand",
+      "deadline": "23.Apr.2026",
+      "matched_keywords": [
+        "single-cell",
+        "immunology",
+        "immunotherapies"
+      ]
+    },
+    "ki_doktorand_904444": {
+      "first_seen": "2026-04-09T09:00:24.788689",
+      "title": "PhD position in stem cell biology and spinal cord injury",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:904444/",
+      "source": "ki_doktorand",
+      "deadline": "29.Apr.2026",
+      "matched_keywords": [
+        "stem cell",
+        "single-cell",
+        "spatial transcriptomics",
+        "crispr"
+      ]
     }
   },
-  "last_updated": "2026-04-08T08:54:08.875328"
+  "last_updated": "2026-04-09T09:00:25.004437"
 }
