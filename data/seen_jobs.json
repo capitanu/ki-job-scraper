@@ -142,7 +142,17 @@
         "spatial transcriptomics",
         "cell culture"
       ]
+    },
+    "ki_varbi_923700": {
+      "first_seen": "2026-04-11T08:35:05.644807",
+      "title": "Research assistant in Cognitive Neuroscience",
+      "url": "https://ki.varbi.com/en/what:job/jobID:923700/",
+      "source": "ki_varbi",
+      "deadline": "2026-05-03",
+      "matched_keywords": [
+        "neuroscience"
+      ]
     }
   },
-  "last_updated": "2026-04-10T09:01:06.298800"
+  "last_updated": "2026-04-11T08:35:06.023836"
 }
