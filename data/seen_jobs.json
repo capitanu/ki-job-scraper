@@ -182,7 +182,19 @@
       "matched_keywords": [
         "neuroscience"
       ]
+    },
+    "ki_doktorand_880016": {
+      "first_seen": "2026-04-17T09:10:05.901845",
+      "title": "Doctoral student position in mechanism investigation and new treatment development for Alzheimer disease",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:880016/",
+      "source": "ki_doktorand",
+      "deadline": "15.May.2026",
+      "matched_keywords": [
+        "neuroscience",
+        "bioinformatics",
+        "molecular biology"
+      ]
     }
   },
-  "last_updated": "2026-04-16T09:10:39.698296"
+  "last_updated": "2026-04-17T09:10:06.258751"
 }
