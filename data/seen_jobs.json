@@ -31,20 +31,6 @@
         "immunology"
       ]
     },
-    "ki_doktorand_919245": {
-      "first_seen": "2026-03-30T09:04:35.753194",
-      "title": "Doctoral (PhD) student position in post-translational gene regulation within hematopoiesis",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:919245/",
-      "source": "ki_doktorand",
-      "deadline": "20.Apr.2026",
-      "matched_keywords": [
-        "stem cell",
-        "single-cell",
-        "cell culture",
-        "bioinformatics",
-        "molecular biology"
-      ]
-    },
     "ki_doktorand_921097": {
       "first_seen": "2026-04-01T08:56:11.498461",
       "title": "Doctoral position in development of novel treatments for lung cancer",
@@ -186,5 +172,5 @@
       ]
     }
   },
-  "last_updated": "2026-04-20T09:52:58.185693"
+  "last_updated": "2026-04-21T09:18:54.993614"
 }
