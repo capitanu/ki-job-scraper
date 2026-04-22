@@ -170,7 +170,19 @@
         "bioinformatics",
         "molecular biology"
       ]
+    },
+    "ki_doktorand_927747": {
+      "first_seen": "2026-04-22T09:13:26.871649",
+      "title": "Doctoral (PhD) student position in  spatial transcriptomics, bioinformatics, and cancer immunology as part of the national DDLS PhD program",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:927747/",
+      "source": "ki_doktorand",
+      "deadline": "13.May.2026",
+      "matched_keywords": [
+        "spatial transcriptomics",
+        "bioinformatics",
+        "immunology"
+      ]
     }
   },
-  "last_updated": "2026-04-21T09:18:54.993614"
+  "last_updated": "2026-04-22T09:13:27.030537"
 }
