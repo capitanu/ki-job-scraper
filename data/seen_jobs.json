@@ -20,17 +20,6 @@
         "neuroscience"
       ]
     },
-    "ki_doktorand_918947": {
-      "first_seen": "2026-03-28T08:31:50.841539",
-      "title": "Doctoral student position in Skeletal biology and Immunology",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:918947/",
-      "source": "ki_doktorand",
-      "deadline": "27.Apr.2026",
-      "matched_keywords": [
-        "stem cell",
-        "immunology"
-      ]
-    },
     "ki_doktorand_921097": {
       "first_seen": "2026-04-01T08:56:11.498461",
       "title": "Doctoral position in development of novel treatments for lung cancer",
@@ -71,16 +60,6 @@
       "matched_keywords": [
         "single-cell",
         "bioinformatics"
-      ]
-    },
-    "ki_varbi_922278": {
-      "first_seen": "2026-04-07T08:54:53.442755",
-      "title": "Post doctoral studies in vaccine immunology",
-      "url": "https://ki.varbi.com/en/what:job/jobID:922278/",
-      "source": "ki_varbi",
-      "deadline": "2026-04-27",
-      "matched_keywords": [
-        "immunology"
       ]
     },
     "ki_doktorand_904444": {
@@ -191,7 +170,28 @@
       "matched_keywords": [
         "genetics"
       ]
+    },
+    "ki_doktorand_929275": {
+      "first_seen": "2026-04-28T10:07:49.480874",
+      "title": "PhD position in thymic derived anti-cancer immunity",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:929275/",
+      "source": "ki_doktorand",
+      "deadline": "11.May.2026",
+      "matched_keywords": [
+        "single-cell",
+        "immunology"
+      ]
+    },
+    "ki_doktorand_929391": {
+      "first_seen": "2026-04-28T10:07:49.481868",
+      "title": "Doctoral (PhD) student position in biostatistics",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:929391/",
+      "source": "ki_doktorand",
+      "deadline": "19.May.2026",
+      "matched_keywords": [
+        "bioinformatics"
+      ]
     }
   },
-  "last_updated": "2026-04-27T10:08:39.562949"
+  "last_updated": "2026-04-28T10:07:49.731794"
 }
