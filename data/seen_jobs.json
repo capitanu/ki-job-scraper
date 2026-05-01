@@ -188,7 +188,21 @@
       "matched_keywords": [
         "immunology"
       ]
+    },
+    "ki_doktorand_931007": {
+      "first_seen": "2026-05-01T09:27:44.339014",
+      "title": "Doctoral (PhD) student position in intestinal mucosal immunology",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:931007/",
+      "source": "ki_doktorand",
+      "deadline": "22.May.2026",
+      "matched_keywords": [
+        "single-cell",
+        "scrna-seq",
+        "bioinformatics",
+        "molecular biology",
+        "immunology"
+      ]
     }
   },
-  "last_updated": "2026-04-30T10:00:20.886675"
+  "last_updated": "2026-05-01T09:27:44.501275"
 }
