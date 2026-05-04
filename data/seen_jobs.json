@@ -63,16 +63,6 @@
         "cell culture"
       ]
     },
-    "ki_varbi_923700": {
-      "first_seen": "2026-04-11T08:35:05.644807",
-      "title": "Research assistant in Cognitive Neuroscience",
-      "url": "https://ki.varbi.com/en/what:job/jobID:923700/",
-      "source": "ki_varbi",
-      "deadline": "2026-05-03",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
     "ki_doktorand_923685": {
       "first_seen": "2026-04-13T09:48:03.728067",
       "title": "Understanding how long non-coding RNAs regulate adipocyte insulin sensitivity",
@@ -204,5 +194,5 @@
       ]
     }
   },
-  "last_updated": "2026-05-03T09:16:35.419111"
+  "last_updated": "2026-05-04T10:07:54.929131"
 }
