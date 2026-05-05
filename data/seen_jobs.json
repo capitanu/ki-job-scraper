@@ -63,16 +63,6 @@
         "cell culture"
       ]
     },
-    "ki_doktorand_923685": {
-      "first_seen": "2026-04-13T09:48:03.728067",
-      "title": "Understanding how long non-coding RNAs regulate adipocyte insulin sensitivity",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:923685/",
-      "source": "ki_doktorand",
-      "deadline": "04.May.2026",
-      "matched_keywords": [
-        "genetics"
-      ]
-    },
     "ki_doktorand_922938": {
       "first_seen": "2026-04-14T09:10:33.666205",
       "title": "Doctoral (PhD) Student Position in Clinical Neuroscience",
@@ -192,7 +182,37 @@
         "molecular biology",
         "immunology"
       ]
+    },
+    "ki_doktorand_931899": {
+      "first_seen": "2026-05-05T09:56:05.770434",
+      "title": "Doctoral (PhD) student position in  malaria immunology and pathogenesis",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:931899/",
+      "source": "ki_doktorand",
+      "deadline": "25.May.2026",
+      "matched_keywords": [
+        "immunology"
+      ]
+    },
+    "ki_varbi_929940": {
+      "first_seen": "2026-05-05T09:56:05.789472",
+      "title": "Research Assistant in Systems Neuroscience Neural basis of survival behaviors",
+      "url": "https://ki.varbi.com/en/what:job/jobID:929940/",
+      "source": "ki_varbi",
+      "deadline": "2026-06-30",
+      "matched_keywords": [
+        "neuroscience"
+      ]
+    },
+    "ki_varbi_930734": {
+      "first_seen": "2026-05-05T09:56:05.789914",
+      "title": "Post doc in Bioinformatics focusing on RNA biology and metabolic disease (scholarship)",
+      "url": "https://ki.varbi.com/en/what:job/jobID:930734/",
+      "source": "ki_varbi",
+      "deadline": "2026-05-31",
+      "matched_keywords": [
+        "bioinformatics"
+      ]
     }
   },
-  "last_updated": "2026-05-04T10:07:54.929131"
+  "last_updated": "2026-05-05T09:56:06.175835"
 }
