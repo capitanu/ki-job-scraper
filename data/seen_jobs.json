@@ -212,7 +212,38 @@
       "matched_keywords": [
         "bioinformatics"
       ]
+    },
+    "ki_doktorand_931467": {
+      "first_seen": "2026-05-06T10:11:14.871278",
+      "title": "Doctoral position in precision cancer immunotherapy",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:931467/",
+      "source": "ki_doktorand",
+      "deadline": "26.May.2026",
+      "matched_keywords": [
+        "immunology",
+        "immunotherapies"
+      ]
+    },
+    "ki_varbi_930557": {
+      "first_seen": "2026-05-06T10:11:14.894628",
+      "title": "Research assistant in Molecular Bacteriology/Molecular Biology/epidemiology",
+      "url": "https://ki.varbi.com/en/what:job/jobID:930557/",
+      "source": "ki_varbi",
+      "deadline": "2026-05-26",
+      "matched_keywords": [
+        "molecular biology"
+      ]
+    },
+    "ki_varbi_930563": {
+      "first_seen": "2026-05-06T10:11:14.894683",
+      "title": "Research assistant in Molecular Bacteriology/Molecular Biology",
+      "url": "https://ki.varbi.com/en/what:job/jobID:930563/",
+      "source": "ki_varbi",
+      "deadline": "2026-05-26",
+      "matched_keywords": [
+        "molecular biology"
+      ]
     }
   },
-  "last_updated": "2026-05-05T09:56:06.175835"
+  "last_updated": "2026-05-06T10:11:15.431991"
 }
