@@ -73,16 +73,6 @@
         "neuroscience"
       ]
     },
-    "ki_varbi_924838": {
-      "first_seen": "2026-04-15T09:11:34.090166",
-      "title": "Research assistant in Neuroscience",
-      "url": "https://ki.varbi.com/en/what:job/jobID:924838/",
-      "source": "ki_varbi",
-      "deadline": "2026-05-06",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
     "ki_doktorand_880016": {
       "first_seen": "2026-04-17T09:10:05.901845",
       "title": "Doctoral student position in mechanism investigation and new treatment development for Alzheimer disease",
@@ -243,7 +233,53 @@
       "matched_keywords": [
         "molecular biology"
       ]
+    },
+    "ki_doktorand_929376": {
+      "first_seen": "2026-05-07T10:16:07.511169",
+      "title": "Doctoral (PhD) student position in deep learning modeling of cancer",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:929376/",
+      "source": "ki_doktorand",
+      "deadline": "27.May.2026",
+      "matched_keywords": [
+        "molecular biology"
+      ]
+    },
+    "ki_doktorand_932631": {
+      "first_seen": "2026-05-07T10:16:07.512122",
+      "title": "PhD position in epigenetic and metabolic interplay",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:932631/",
+      "source": "ki_doktorand",
+      "deadline": "07.Jun.2026",
+      "matched_keywords": [
+        "ipsc",
+        "single-cell",
+        "crispr"
+      ]
+    },
+    "ki_doktorand_933179": {
+      "first_seen": "2026-05-07T10:16:07.513958",
+      "title": "Doctoral (PhD) student position in normal and malignant hematopoiesis",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:933179/",
+      "source": "ki_doktorand",
+      "deadline": "27.May.2026",
+      "matched_keywords": [
+        "single-cell",
+        "crispr",
+        "cell culture",
+        "bioinformatics",
+        "immunology"
+      ]
+    },
+    "ki_varbi_933250": {
+      "first_seen": "2026-05-07T10:16:07.537500",
+      "title": "Research Specialist in Human Microbiome Research with Bioinformatics competence",
+      "url": "https://ki.varbi.com/en/what:job/jobID:933250/",
+      "source": "ki_varbi",
+      "deadline": "2026-05-28",
+      "matched_keywords": [
+        "bioinformatics"
+      ]
     }
   },
-  "last_updated": "2026-05-06T10:11:15.431991"
+  "last_updated": "2026-05-07T10:16:07.769641"
 }
