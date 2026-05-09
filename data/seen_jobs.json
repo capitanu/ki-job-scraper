@@ -279,7 +279,27 @@
         "single-cell",
         "crispr"
       ]
+    },
+    "ki_doktorand_874695": {
+      "first_seen": "2026-05-09T09:11:34.894988",
+      "title": "PhD candidate in Cognitive Neuroscience of Aging with a focus on Neuroimaging- ERC Project DOPAGE",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:874695/",
+      "source": "ki_doktorand",
+      "deadline": "07.Jun.2026",
+      "matched_keywords": [
+        "neuroscience"
+      ]
+    },
+    "ki_doktorand_932587": {
+      "first_seen": "2026-05-09T09:11:34.897009",
+      "title": "Doctoral (PhD) student position in vision science focused on multimodal biomarkers in age-related macular degeneration",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:932587/",
+      "source": "ki_doktorand",
+      "deadline": "31.May.2026",
+      "matched_keywords": [
+        "stem cell"
+      ]
     }
   },
-  "last_updated": "2026-05-08T09:08:42.277198"
+  "last_updated": "2026-05-09T09:11:35.112021"
 }
