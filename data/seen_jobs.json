@@ -96,17 +96,6 @@
         "genetics"
       ]
     },
-    "ki_doktorand_929275": {
-      "first_seen": "2026-04-28T10:07:49.480874",
-      "title": "PhD position in thymic derived anti-cancer immunity",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:929275/",
-      "source": "ki_doktorand",
-      "deadline": "11.May.2026",
-      "matched_keywords": [
-        "single-cell",
-        "immunology"
-      ]
-    },
     "ki_doktorand_929391": {
       "first_seen": "2026-04-28T10:07:49.481868",
       "title": "Doctoral (PhD) student position in biostatistics",
@@ -290,5 +279,5 @@
       ]
     }
   },
-  "last_updated": "2026-05-11T10:55:02.970819"
+  "last_updated": "2026-05-12T10:26:00.130079"
 }
