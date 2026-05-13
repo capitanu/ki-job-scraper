@@ -277,7 +277,20 @@
       "matched_keywords": [
         "stem cell"
       ]
+    },
+    "ki_doktorand_935205": {
+      "first_seen": "2026-05-13T10:14:57.989344",
+      "title": "PhD Position in Glioblastoma Immunology",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:935205/",
+      "source": "ki_doktorand",
+      "deadline": "02.Jun.2026",
+      "matched_keywords": [
+        "stem cell",
+        "single-cell",
+        "molecular biology",
+        "immunology"
+      ]
     }
   },
-  "last_updated": "2026-05-12T10:26:00.130079"
+  "last_updated": "2026-05-13T10:14:58.148618"
 }
