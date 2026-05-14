@@ -20,17 +20,6 @@
         "neuroscience"
       ]
     },
-    "ki_doktorand_919938": {
-      "first_seen": "2026-04-01T08:56:11.499475",
-      "title": "PhD Position in Bioinformatics: Clinical Breast Cancer Proteomics",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:919938/",
-      "source": "ki_doktorand",
-      "deadline": "13.May.2026",
-      "matched_keywords": [
-        "bioinformatics",
-        "molecular biology"
-      ]
-    },
     "ki_varbi_919080": {
       "first_seen": "2026-04-01T08:56:11.515028",
       "title": "Are you interested in discovering how metabolism affects stem cell aging?",
@@ -292,5 +281,5 @@
       ]
     }
   },
-  "last_updated": "2026-05-13T10:14:58.148618"
+  "last_updated": "2026-05-14T10:08:42.449028"
 }
