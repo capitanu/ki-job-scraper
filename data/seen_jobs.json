@@ -30,16 +30,6 @@
         "stem cell"
       ]
     },
-    "ki_doktorand_922938": {
-      "first_seen": "2026-04-14T09:10:33.666205",
-      "title": "Doctoral (PhD) Student Position in Clinical Neuroscience",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:922938/",
-      "source": "ki_doktorand",
-      "deadline": "14.May.2026",
-      "matched_keywords": [
-        "neuroscience"
-      ]
-    },
     "ki_doktorand_880016": {
       "first_seen": "2026-04-17T09:10:05.901845",
       "title": "Doctoral student position in mechanism investigation and new treatment development for Alzheimer disease",
@@ -281,5 +271,5 @@
       ]
     }
   },
-  "last_updated": "2026-05-14T10:08:42.449028"
+  "last_updated": "2026-05-15T10:14:19.033932"
 }
