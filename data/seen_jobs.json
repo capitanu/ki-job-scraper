@@ -236,7 +236,17 @@
         "molecular biology",
         "immunology"
       ]
+    },
+    "ki_doktorand_936564": {
+      "first_seen": "2026-05-18T11:39:11.301782",
+      "title": "PhD position in Biostatistics",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:936564/",
+      "source": "ki_doktorand",
+      "deadline": "07.Jun.2026",
+      "matched_keywords": [
+        "bioinformatics"
+      ]
     }
   },
-  "last_updated": "2026-05-17T09:29:32.463129"
+  "last_updated": "2026-05-18T11:39:11.588273"
 }
