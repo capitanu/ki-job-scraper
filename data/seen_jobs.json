@@ -255,7 +255,18 @@
       "matched_keywords": [
         "single-cell"
       ]
+    },
+    "ki_doktorand_937162": {
+      "first_seen": "2026-05-25T11:46:56.083015",
+      "title": "Doctoral (PhD) student position in Chromosome biology",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:937162/",
+      "source": "ki_doktorand",
+      "deadline": "02.Aug.2026",
+      "matched_keywords": [
+        "bioinformatics",
+        "molecular biology"
+      ]
     }
   },
-  "last_updated": "2026-05-24T09:49:26.130442"
+  "last_updated": "2026-05-25T11:46:56.418991"
 }
