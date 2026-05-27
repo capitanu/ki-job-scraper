@@ -52,16 +52,6 @@
         "neuroscience"
       ]
     },
-    "ki_doktorand_931899": {
-      "first_seen": "2026-05-05T09:56:05.770434",
-      "title": "Doctoral (PhD) student position in  malaria immunology and pathogenesis",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:931899/",
-      "source": "ki_doktorand",
-      "deadline": "25.May.2026",
-      "matched_keywords": [
-        "immunology"
-      ]
-    },
     "ki_varbi_929940": {
       "first_seen": "2026-05-05T09:56:05.789472",
       "title": "Research Assistant in Systems Neuroscience Neural basis of survival behaviors",
@@ -80,37 +70,6 @@
       "deadline": "2026-05-31",
       "matched_keywords": [
         "bioinformatics"
-      ]
-    },
-    "ki_doktorand_931467": {
-      "first_seen": "2026-05-06T10:11:14.871278",
-      "title": "Doctoral position in precision cancer immunotherapy",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:931467/",
-      "source": "ki_doktorand",
-      "deadline": "26.May.2026",
-      "matched_keywords": [
-        "immunology",
-        "immunotherapies"
-      ]
-    },
-    "ki_varbi_930557": {
-      "first_seen": "2026-05-06T10:11:14.894628",
-      "title": "Research assistant in Molecular Bacteriology/Molecular Biology/epidemiology",
-      "url": "https://ki.varbi.com/en/what:job/jobID:930557/",
-      "source": "ki_varbi",
-      "deadline": "2026-05-26",
-      "matched_keywords": [
-        "molecular biology"
-      ]
-    },
-    "ki_varbi_930563": {
-      "first_seen": "2026-05-06T10:11:14.894683",
-      "title": "Research assistant in Molecular Bacteriology/Molecular Biology",
-      "url": "https://ki.varbi.com/en/what:job/jobID:930563/",
-      "source": "ki_varbi",
-      "deadline": "2026-05-26",
-      "matched_keywords": [
-        "molecular biology"
       ]
     },
     "ki_doktorand_929376": {
@@ -266,7 +225,18 @@
         "bioinformatics",
         "molecular biology"
       ]
+    },
+    "ki_doktorand_939311": {
+      "first_seen": "2026-05-27T11:31:53.064687",
+      "title": "Doctoral (PhD) student position in Biostochastics",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:939311/",
+      "source": "ki_doktorand",
+      "deadline": "15.Jun.2026",
+      "matched_keywords": [
+        "computational biology",
+        "immunology"
+      ]
     }
   },
-  "last_updated": "2026-05-25T11:46:56.418991"
+  "last_updated": "2026-05-27T11:31:53.390517"
 }
