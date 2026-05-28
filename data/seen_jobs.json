@@ -72,16 +72,6 @@
         "bioinformatics"
       ]
     },
-    "ki_doktorand_929376": {
-      "first_seen": "2026-05-07T10:16:07.511169",
-      "title": "Doctoral (PhD) student position in deep learning modeling of cancer",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:929376/",
-      "source": "ki_doktorand",
-      "deadline": "27.May.2026",
-      "matched_keywords": [
-        "molecular biology"
-      ]
-    },
     "ki_doktorand_932631": {
       "first_seen": "2026-05-07T10:16:07.512122",
       "title": "PhD position in epigenetic and metabolic interplay",
@@ -92,20 +82,6 @@
         "ipsc",
         "single-cell",
         "crispr"
-      ]
-    },
-    "ki_doktorand_933179": {
-      "first_seen": "2026-05-07T10:16:07.513958",
-      "title": "Doctoral (PhD) student position in normal and malignant hematopoiesis",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:933179/",
-      "source": "ki_doktorand",
-      "deadline": "27.May.2026",
-      "matched_keywords": [
-        "single-cell",
-        "crispr",
-        "cell culture",
-        "bioinformatics",
-        "immunology"
       ]
     },
     "ki_varbi_933250": {
@@ -236,7 +212,17 @@
         "computational biology",
         "immunology"
       ]
+    },
+    "ki_varbi_940415": {
+      "first_seen": "2026-05-28T11:31:13.329831",
+      "title": "Research Assistant in Hematopoiesis and Stem Cell Biology",
+      "url": "https://ki.varbi.com/en/what:job/jobID:940415/",
+      "source": "ki_varbi",
+      "deadline": "2026-06-17",
+      "matched_keywords": [
+        "stem cell"
+      ]
     }
   },
-  "last_updated": "2026-05-27T11:31:53.390517"
+  "last_updated": "2026-05-28T11:31:13.411221"
 }
