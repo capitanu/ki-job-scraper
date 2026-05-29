@@ -84,16 +84,6 @@
         "crispr"
       ]
     },
-    "ki_varbi_933250": {
-      "first_seen": "2026-05-07T10:16:07.537500",
-      "title": "Research Specialist in Human Microbiome Research with Bioinformatics competence",
-      "url": "https://ki.varbi.com/en/what:job/jobID:933250/",
-      "source": "ki_varbi",
-      "deadline": "2026-05-28",
-      "matched_keywords": [
-        "bioinformatics"
-      ]
-    },
     "ki_doktorand_933279": {
       "first_seen": "2026-05-08T09:08:42.132380",
       "title": "Doctoral (PhD) student position in adipocyte systems biology",
@@ -222,7 +212,39 @@
       "matched_keywords": [
         "stem cell"
       ]
+    },
+    "ki_varbi_940084": {
+      "first_seen": "2026-05-29T11:21:41.913612",
+      "title": "Research assistant in Spatial Multi-omics and Translational Developmental Biology",
+      "url": "https://ki.varbi.com/en/what:job/jobID:940084/",
+      "source": "ki_varbi",
+      "deadline": "2026-05-29",
+      "matched_keywords": [
+        "developmental biology",
+        "developmental"
+      ]
+    },
+    "ki_varbi_941316": {
+      "first_seen": "2026-05-29T11:21:41.913716",
+      "title": "Research assistant in Spatial Multi-omics and Translational Developmental Biology",
+      "url": "https://ki.varbi.com/en/what:job/jobID:941316/",
+      "source": "ki_varbi",
+      "deadline": "2026-06-18",
+      "matched_keywords": [
+        "developmental biology",
+        "developmental"
+      ]
+    },
+    "ki_varbi_941344": {
+      "first_seen": "2026-05-29T11:21:41.913769",
+      "title": "Research assistant in psychiatric epidemiology and genetics",
+      "url": "https://ki.varbi.com/en/what:job/jobID:941344/",
+      "source": "ki_varbi",
+      "deadline": "2026-06-18",
+      "matched_keywords": [
+        "genetics"
+      ]
     }
   },
-  "last_updated": "2026-05-28T11:31:13.411221"
+  "last_updated": "2026-05-29T11:21:42.556034"
 }
