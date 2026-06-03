@@ -95,19 +95,6 @@
         "neuroscience"
       ]
     },
-    "ki_doktorand_935205": {
-      "first_seen": "2026-05-13T10:14:57.989344",
-      "title": "PhD Position in Glioblastoma Immunology",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:935205/",
-      "source": "ki_doktorand",
-      "deadline": "02.Jun.2026",
-      "matched_keywords": [
-        "stem cell",
-        "single-cell",
-        "molecular biology",
-        "immunology"
-      ]
-    },
     "ki_doktorand_936564": {
       "first_seen": "2026-05-18T11:39:11.301782",
       "title": "PhD position in Biostatistics",
@@ -233,7 +220,19 @@
       "matched_keywords": [
         "neuroscience"
       ]
+    },
+    "ki_doktorand_942980": {
+      "first_seen": "2026-06-03T12:36:48.178781",
+      "title": "PhD position in AI for pan cancer therapy resistance",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:942980/",
+      "source": "ki_doktorand",
+      "deadline": "24.Jun.2026",
+      "matched_keywords": [
+        "bioinformatics",
+        "molecular biology",
+        "immunology"
+      ]
     }
   },
-  "last_updated": "2026-06-02T11:58:18.833678"
+  "last_updated": "2026-06-03T12:36:48.486366"
 }
