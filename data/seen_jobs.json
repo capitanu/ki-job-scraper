@@ -74,17 +74,6 @@
         "crispr"
       ]
     },
-    "ki_doktorand_933279": {
-      "first_seen": "2026-05-08T09:08:42.132380",
-      "title": "Doctoral (PhD) student position in adipocyte systems biology",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:933279/",
-      "source": "ki_doktorand",
-      "deadline": "05.Jun.2026",
-      "matched_keywords": [
-        "single-cell",
-        "crispr"
-      ]
-    },
     "ki_doktorand_874695": {
       "first_seen": "2026-05-09T09:11:34.894988",
       "title": "PhD candidate in Cognitive Neuroscience of Aging with a focus on Neuroimaging- ERC Project DOPAGE",
@@ -234,5 +223,5 @@
       ]
     }
   },
-  "last_updated": "2026-06-05T11:20:04.955657"
+  "last_updated": "2026-06-06T09:56:52.034346"
 }
