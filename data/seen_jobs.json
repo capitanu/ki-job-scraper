@@ -82,16 +82,6 @@
         "neuroscience"
       ]
     },
-    "ki_varbi_937401": {
-      "first_seen": "2026-05-20T10:43:46.016269",
-      "title": "Research assistant (1\u20132 positions) in single-cell proteomics of mitochondrial disease",
-      "url": "https://ki.varbi.com/en/what:job/jobID:937401/",
-      "source": "ki_varbi",
-      "deadline": "2026-06-08",
-      "matched_keywords": [
-        "single-cell"
-      ]
-    },
     "ki_doktorand_937162": {
       "first_seen": "2026-05-25T11:46:56.083015",
       "title": "Doctoral (PhD) student position in Chromosome biology",
@@ -176,7 +166,17 @@
         "molecular biology",
         "immunology"
       ]
+    },
+    "ki_varbi_944543": {
+      "first_seen": "2026-06-09T10:54:34.494142",
+      "title": "Research Assistant in Clinical Genetics, Rare Skeletal Diseases",
+      "url": "https://ki.varbi.com/en/what:job/jobID:944543/",
+      "source": "ki_varbi",
+      "deadline": "2026-06-28",
+      "matched_keywords": [
+        "genetics"
+      ]
     }
   },
-  "last_updated": "2026-06-08T12:23:07.967801"
+  "last_updated": "2026-06-09T10:54:34.779400"
 }
