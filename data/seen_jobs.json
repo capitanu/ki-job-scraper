@@ -156,7 +156,17 @@
       "matched_keywords": [
         "genetics"
       ]
+    },
+    "ki_varbi_945811": {
+      "first_seen": "2026-06-11T12:04:27.292086",
+      "title": "Research Specialist in Neuroscience",
+      "url": "https://ki.varbi.com/en/what:job/jobID:945811/",
+      "source": "ki_varbi",
+      "deadline": "2026-07-02",
+      "matched_keywords": [
+        "neuroscience"
+      ]
     }
   },
-  "last_updated": "2026-06-10T11:33:12.816778"
+  "last_updated": "2026-06-11T12:04:27.465605"
 }
