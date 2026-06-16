@@ -73,17 +73,6 @@
         "molecular biology"
       ]
     },
-    "ki_doktorand_939311": {
-      "first_seen": "2026-05-27T11:31:53.064687",
-      "title": "Doctoral (PhD) student position in Biostochastics",
-      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:939311/",
-      "source": "ki_doktorand",
-      "deadline": "15.Jun.2026",
-      "matched_keywords": [
-        "computational biology",
-        "immunology"
-      ]
-    },
     "ki_varbi_940415": {
       "first_seen": "2026-05-28T11:31:13.329831",
       "title": "Research Assistant in Hematopoiesis and Stem Cell Biology",
@@ -168,5 +157,5 @@
       ]
     }
   },
-  "last_updated": "2026-06-15T13:48:22.766406"
+  "last_updated": "2026-06-16T12:47:18.737869"
 }
