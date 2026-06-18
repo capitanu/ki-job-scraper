@@ -1,10 +1,6 @@
 name: KI Job Scraper
 
 on:
-  # Run daily at 9:00 AM CET (8:00 AM UTC)
-  schedule:
-    - cron: '0 8 * * *'
-
   # Allow manual trigger
   workflow_dispatch:
     inputs:
