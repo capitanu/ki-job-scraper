@@ -73,16 +73,6 @@
         "molecular biology"
       ]
     },
-    "ki_varbi_940415": {
-      "first_seen": "2026-05-28T11:31:13.329831",
-      "title": "Research Assistant in Hematopoiesis and Stem Cell Biology",
-      "url": "https://ki.varbi.com/en/what:job/jobID:940415/",
-      "source": "ki_varbi",
-      "deadline": "2026-06-17",
-      "matched_keywords": [
-        "stem cell"
-      ]
-    },
     "ki_varbi_941316": {
       "first_seen": "2026-05-29T11:21:41.913716",
       "title": "Research assistant in Spatial Multi-omics and Translational Developmental Biology",
@@ -165,7 +155,29 @@
       "matched_keywords": [
         "immunology"
       ]
+    },
+    "ki_doktorand_947868": {
+      "first_seen": "2026-06-18T11:45:57.376008",
+      "title": "Doctoral (PhD) student position for studying new treatment strategies to prevent bone growth impairment and osteoporosis in childhood cancer survivors",
+      "url": "https://kidoktorand.varbi.com/en/what:job/jobID:947868/",
+      "source": "ki_doktorand",
+      "deadline": "31.Jul.2026",
+      "matched_keywords": [
+        "single-cell",
+        "cell culture",
+        "bioinformatics"
+      ]
+    },
+    "ki_varbi_934747": {
+      "first_seen": "2026-06-18T11:45:57.389569",
+      "title": "Professor of Clinical Genetics and Genomics combined with employment as at least specialist physician at Karolinska University Hospital",
+      "url": "https://ki.varbi.com/en/what:job/jobID:934747/",
+      "source": "ki_varbi",
+      "deadline": "2026-08-10",
+      "matched_keywords": [
+        "genetics"
+      ]
     }
   },
-  "last_updated": "2026-06-17T12:10:43.613629"
+  "last_updated": "2026-06-18T11:45:57.781484"
 }
